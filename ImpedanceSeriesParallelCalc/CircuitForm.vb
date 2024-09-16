@@ -4,9 +4,9 @@
 'https://github.com/Minidude140/ImpedanceSeriesParallelCalc
 
 'TOdO
-'[]Load Circuit Values into array
-'[]User input validation
-'[]Load Default Circuit Values
+'[*]Load Circuit Values into array
+'[*]User input validation
+'[*]Load Default Circuit Values
 '[]Do Math
 '[]Create and populate list box with results
 '[]Output File with results;  Use print function
@@ -119,6 +119,29 @@ Public Class CircuitForm
         Return isValid
     End Function
 
+    ''' <summary>
+    ''' Loads Default values into Array and updates Text boxes
+    ''' </summary>
+    Sub LoadDefaults()
+        'Load Default Values: Vgen = 12V, F = 100, R1 = 50, C1 = 1μF, L1 = 1H, RW = 50, C2 = 1μF, R2 = 500
+        circuitValues = {{12, 100}, {50, 0}, {0.000001, 0}, {1, 0}, {50, 0}, {0.000001, 0}, {500, 0}}
+        'Calculate Default XC1
+        circuitValues(2, 1) = CalculateXC(circuitValues(0, 1), circuitValues(2, 0))
+        'Calculate Default XL1
+        circuitValues(3, 1) = CalculateXL(circuitValues(0, 1), circuitValues(3, 0))
+        'Calculate Default XC2
+        circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0))
+        'Update Text boxes with defaults
+        VgenTextBox.Text = CStr(circuitValues(0, 0))
+        FrequencyTextBox.Text = CStr(circuitValues(0, 1))
+        R1TextBox.Text = CStr(circuitValues(1, 0))
+        C1TextBox.Text = CStr(circuitValues(2, 0))
+        L1TextBox.Text = CStr(circuitValues(3, 0))
+        RwTextBox.Text = CStr(circuitValues(4, 0))
+        C2TextBox.Text = CStr(circuitValues(5, 0))
+        R2TextBox.Text = CStr(circuitValues(6, 0))
+    End Sub
+
     'Event Handlers
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         'Close Program
@@ -126,6 +149,25 @@ Public Class CircuitForm
     End Sub
 
     Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click
+        Try
+            'Checks if all inputs are numbers
+            If UserInputValidation() = True Then
+                'Load numbers into array
+                LoadCircuitValues()
+            Else
+                'Not all numbers throw exception
+                Throw New Exception()
+            End If
+        Catch ex As Exception
+            MsgBox("Sorry your inputs could not be converted.  Please enter numbers only.")
+        End Try
+    End Sub
 
+    Private Sub CircuitForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+        LoadDefaults()
+    End Sub
+
+    Private Sub RestoreDefaultsButton_Click(sender As Object, e As EventArgs) Handles RestoreDefaultsButton.Click
+        LoadDefaults()
     End Sub
 End Class

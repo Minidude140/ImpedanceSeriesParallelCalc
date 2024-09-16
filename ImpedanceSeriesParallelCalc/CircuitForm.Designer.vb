@@ -33,6 +33,7 @@ Partial Class CircuitForm
         Me.CircuitPictureBox = New System.Windows.Forms.PictureBox()
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.CalculateButton = New System.Windows.Forms.Button()
+        Me.RestoreDefaultsButton = New System.Windows.Forms.Button()
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -122,11 +123,22 @@ Partial Class CircuitForm
         Me.CalculateButton.Text = "Calculate " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Values"
         Me.CalculateButton.UseVisualStyleBackColor = True
         '
+        'RestoreDefaultsButton
+        '
+        Me.RestoreDefaultsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RestoreDefaultsButton.Location = New System.Drawing.Point(12, 579)
+        Me.RestoreDefaultsButton.Name = "RestoreDefaultsButton"
+        Me.RestoreDefaultsButton.Size = New System.Drawing.Size(144, 65)
+        Me.RestoreDefaultsButton.TabIndex = 11
+        Me.RestoreDefaultsButton.Text = "Restore" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Defaults"
+        Me.RestoreDefaultsButton.UseVisualStyleBackColor = True
+        '
         'CircuitForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1257, 640)
+        Me.ClientSize = New System.Drawing.Size(1257, 652)
+        Me.Controls.Add(Me.RestoreDefaultsButton)
         Me.Controls.Add(Me.CalculateButton)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.RwTextBox)
@@ -158,4 +170,5 @@ Partial Class CircuitForm
     Friend WithEvents RwTextBox As TextBox
     Friend WithEvents QuitButton As Button
     Friend WithEvents CalculateButton As Button
+    Friend WithEvents RestoreDefaultsButton As Button
 End Class
