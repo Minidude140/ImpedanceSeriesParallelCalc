@@ -43,7 +43,7 @@ Public Class CircuitForm
         'Populate L1 Value
         circuitValues(3, 0) = CDbl(L1TextBox.Text)
         'Calculate and Populate XL1
-        'circuitValues(3, 1) = CalculateXL(circuitValues(0,1), circuitValues(3, 0))
+        circuitValues(3, 1) = CalculateXL(circuitValues(0, 1), circuitValues(3, 0))
         'Populate RW Value
         circuitValues(4, 0) = CDbl(RwTextBox.Text)
         'Populate C2 Value
@@ -55,7 +55,7 @@ Public Class CircuitForm
     End Sub
 
     ''' <summary>
-    ''' Returns the Calculated XC given frequency and capacitance
+    ''' Returns the Calculated XC given Frequency and Capacitance
     ''' </summary>
     ''' <param name="frequency"></param>
     ''' <param name="capacitance"></param>
@@ -64,6 +64,18 @@ Public Class CircuitForm
         Dim xC As Double
         xC = (1 / (2 * pi * frequency * capacitance))
         Return xC
+    End Function
+
+    ''' <summary>
+    ''' Returns the Calculated XL given Frequency and Inductance
+    ''' </summary>
+    ''' <param name="frequency"></param>
+    ''' <param name="inductace"></param>
+    ''' <returns></returns>
+    Function CalculateXL(frequency As Double, inductace As Double) As Double
+        Dim xL As Double
+        xL = (2 * pi * frequency * inductace)
+        Return xL
     End Function
 
     'Event Handlers
