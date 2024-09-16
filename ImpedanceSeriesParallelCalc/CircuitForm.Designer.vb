@@ -31,6 +31,8 @@ Partial Class CircuitForm
         Me.FrequencyTextBox = New System.Windows.Forms.TextBox()
         Me.RwTextBox = New System.Windows.Forms.TextBox()
         Me.CircuitPictureBox = New System.Windows.Forms.PictureBox()
+        Me.QuitButton = New System.Windows.Forms.Button()
+        Me.CalculateButton = New System.Windows.Forms.Button()
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,11 +102,33 @@ Partial Class CircuitForm
         Me.CircuitPictureBox.TabIndex = 0
         Me.CircuitPictureBox.TabStop = False
         '
+        'QuitButton
+        '
+        Me.QuitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.QuitButton.Location = New System.Drawing.Point(1097, 517)
+        Me.QuitButton.Name = "QuitButton"
+        Me.QuitButton.Size = New System.Drawing.Size(144, 56)
+        Me.QuitButton.TabIndex = 9
+        Me.QuitButton.Text = "Quit"
+        Me.QuitButton.UseVisualStyleBackColor = True
+        '
+        'CalculateButton
+        '
+        Me.CalculateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CalculateButton.Location = New System.Drawing.Point(12, 508)
+        Me.CalculateButton.Name = "CalculateButton"
+        Me.CalculateButton.Size = New System.Drawing.Size(144, 65)
+        Me.CalculateButton.TabIndex = 10
+        Me.CalculateButton.Text = "Calculate " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Values"
+        Me.CalculateButton.UseVisualStyleBackColor = True
+        '
         'CircuitForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1257, 640)
+        Me.Controls.Add(Me.CalculateButton)
+        Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.RwTextBox)
         Me.Controls.Add(Me.FrequencyTextBox)
         Me.Controls.Add(Me.VgenTextBox)
@@ -132,4 +156,6 @@ Partial Class CircuitForm
     Friend WithEvents VgenTextBox As TextBox
     Friend WithEvents FrequencyTextBox As TextBox
     Friend WithEvents RwTextBox As TextBox
+    Friend WithEvents QuitButton As Button
+    Friend WithEvents CalculateButton As Button
 End Class
