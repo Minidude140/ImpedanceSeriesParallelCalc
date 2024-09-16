@@ -52,6 +52,7 @@ Public Class CircuitForm
         circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0))
         'Populate R2 Value
         circuitValues(6, 0) = CDbl(R2TextBox.Text)
+        MsgBox("User input values have been saved")
     End Sub
 
     ''' <summary>
