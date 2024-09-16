@@ -15,7 +15,7 @@ Option Explicit On
 Option Strict On
 Public Class CircuitForm
     Dim pi As Double = System.Math.PI
-    Dim circuitValues(6, 1) As Integer
+    Dim circuitValues(6, 1) As Double
     '          0:    1:
     '   0:  | Vgen |  F   |    
     '   1:  | R1   |  x   |
@@ -31,27 +31,27 @@ Public Class CircuitForm
     ''' </summary>
     Sub LoadCircuitValues()
         'Populate Vgen
-        circuitValues(0, 0) = CInt(VgenTextBox.Text)
+        circuitValues(0, 0) = CDbl(VgenTextBox.Text)
         'Populate Frequency
-        circuitValues(0, 1) = CInt(FrequencyTextBox.Text)
+        circuitValues(0, 1) = CDbl(FrequencyTextBox.Text)
         'Populate R1 Value
-        circuitValues(1, 0) = CInt(R1TextBox.Text)
+        circuitValues(1, 0) = CDbl(R1TextBox.Text)
         'Populate C1 Value
-        circuitValues(2, 0) = CInt(C1TextBox.Text)
+        circuitValues(2, 0) = CDbl(C1TextBox.Text)
         'Calculate and Populate XC1
         circuitValues(2, 1) = CalculateXC(circuitValues(0, 1), circuitValues(2, 0))
         'Populate L1 Value
-        circuitValues(3, 0) = CInt(L1TextBox.Text)
+        circuitValues(3, 0) = CDbl(L1TextBox.Text)
         'Calculate and Populate XL1
         'circuitValues(3, 1) = CalculateXL(circuitValues(0,1), circuitValues(3, 0))
         'Populate RW Value
-        circuitValues(4, 0) = CInt(RwTextBox.Text)
+        circuitValues(4, 0) = CDbl(RwTextBox.Text)
         'Populate C2 Value
-        circuitValues(5, 0) = CInt(C2TextBox.Text)
+        circuitValues(5, 0) = CDbl(C2TextBox.Text)
         'Calculate and Populate CX2
-        circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0)
+        circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0))
         'Populate R2 Value
-        circuitValues(6, 0) = CInt(R2TextBox.Text)
+        circuitValues(6, 0) = CDbl(R2TextBox.Text)
     End Sub
 
     ''' <summary>
@@ -60,9 +60,9 @@ Public Class CircuitForm
     ''' <param name="frequency"></param>
     ''' <param name="capacitance"></param>
     ''' <returns></returns>
-    Function CalculateXC(frequency As Integer, capacitance As Integer) As Integer
-        Dim xC As Integer
-        xC = CInt(1 / (2 * pi * frequency * capacitance))
+    Function CalculateXC(frequency As Double, capacitance As Double) As Double
+        Dim xC As Double
+        xC = (1 / (2 * pi * frequency * capacitance))
         Return xC
     End Function
 
