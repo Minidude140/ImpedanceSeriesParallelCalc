@@ -22,10 +22,34 @@ Partial Class CircuitForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.CircuitPictureBox = New System.Windows.Forms.PictureBox()
+        CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'CircuitPictureBox
+        '
+        Me.CircuitPictureBox.BackgroundImage = Global.ImpedanceSeriesParallelCalc.My.Resources.Resources.CircuitImage
+        Me.CircuitPictureBox.Location = New System.Drawing.Point(10, 30)
+        Me.CircuitPictureBox.Name = "CircuitPictureBox"
+        Me.CircuitPictureBox.Size = New System.Drawing.Size(802, 305)
+        Me.CircuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.CircuitPictureBox.TabIndex = 0
+        Me.CircuitPictureBox.TabStop = False
+        '
+        'CircuitForm
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        Me.ClientSize = New System.Drawing.Size(1049, 497)
+        Me.Controls.Add(Me.CircuitPictureBox)
+        Me.MinimumSize = New System.Drawing.Size(1067, 0)
+        Me.Name = "CircuitForm"
+        Me.Text = "Circuit Calculator"
+        CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
+    Friend WithEvents CircuitPictureBox As PictureBox
 End Class
