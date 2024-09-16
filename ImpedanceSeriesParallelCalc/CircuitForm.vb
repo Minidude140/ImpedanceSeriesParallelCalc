@@ -14,6 +14,7 @@
 Option Explicit On
 Option Strict On
 Public Class CircuitForm
+    Dim pi As Double = System.Math.PI
     Dim circuitValues(6, 1) As Integer
     '          0:    1:
     '   0:  | Vgen |  F   |    
@@ -38,7 +39,7 @@ Public Class CircuitForm
         'Populate C1 Value
         circuitValues(2, 0) = CInt(C1TextBox.Text)
         'Calculate and Populate XC1
-        'circuitValues(2, 1) = CalculateXC(circuitValues(0, 1), circuitValues(2, 0))
+        circuitValues(2, 1) = CalculateXC(circuitValues(0, 1), circuitValues(2, 0))
         'Populate L1 Value
         circuitValues(3, 0) = CInt(L1TextBox.Text)
         'Calculate and Populate XL1
@@ -48,10 +49,22 @@ Public Class CircuitForm
         'Populate C2 Value
         circuitValues(5, 0) = CInt(C2TextBox.Text)
         'Calculate and Populate CX2
-        'circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0)
+        circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0)
         'Populate R2 Value
         circuitValues(6, 0) = CInt(R2TextBox.Text)
     End Sub
+
+    ''' <summary>
+    ''' Returns the Calculated XC given frequency and capacitance
+    ''' </summary>
+    ''' <param name="frequency"></param>
+    ''' <param name="capacitance"></param>
+    ''' <returns></returns>
+    Function CalculateXC(frequency As Integer, capacitance As Integer) As Integer
+        Dim xC As Integer
+        xC = CInt(1 / (2 * pi * frequency * capacitance))
+        Return xC
+    End Function
 
     'Event Handlers
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
