@@ -13,5 +13,15 @@
 Option Explicit On
 Option Strict On
 Public Class CircuitForm
+    'Custom Methods
 
+    'Event Handlers
+    Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
+        'Close Program
+        Me.Close()
+    End Sub
+
+    Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click
+
+    End Sub
 End Class
