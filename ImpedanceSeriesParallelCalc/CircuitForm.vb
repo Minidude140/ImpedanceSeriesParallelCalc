@@ -78,6 +78,47 @@ Public Class CircuitForm
         Return xL
     End Function
 
+    ''' <summary>
+    ''' Checks if the contents of the text boxes are numeric.  Returns False if any are not.  
+    ''' </summary>
+    ''' <returns></returns>
+    Function UserInputValidation() As Boolean
+        Dim isValid As Boolean = True
+        'Check Vgen is a number
+        If IsNumeric(VgenTextBox.Text) = False Then
+            isValid = False
+        End If
+        'Check Frequency is a number
+        If IsNumeric(FrequencyTextBox.Text) = False Then
+            isValid = False
+        End If
+        'check R1 is a number
+        If IsNumeric(R1TextBox.Text) = False Then
+            isValid = False
+        End If
+        'check C1 is a number
+        If IsNumeric(C1TextBox.Text) = False Then
+            isValid = False
+        End If
+        'check L1 is a number
+        If IsNumeric(L1TextBox.Text) = False Then
+            isValid = False
+        End If
+        'check RW is a number
+        If IsNumeric(RwTextBox.Text) = False Then
+            isValid = False
+        End If
+        'check C2 is a number
+        If IsNumeric(C2TextBox.Text) = False Then
+            isValid = False
+        End If
+        'check R2 is a number
+        If IsNumeric(R2TextBox.Text) = False Then
+            isValid = False
+        End If
+        Return isValid
+    End Function
+
     'Event Handlers
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         'Close Program
