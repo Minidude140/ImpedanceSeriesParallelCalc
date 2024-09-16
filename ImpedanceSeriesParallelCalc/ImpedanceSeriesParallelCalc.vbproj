@@ -122,5 +122,8 @@
   <ItemGroup>
     <None Include="Resources\CircuitImage.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CircuitImage1.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
