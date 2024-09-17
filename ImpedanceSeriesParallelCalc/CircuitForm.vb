@@ -24,16 +24,11 @@ Public Class CircuitForm
     '   4:  | RW   |  x   |
     '   5:  | C2   | XC2  |
     '   6:  | R2   |  x   |
-
-    'Dim calculatedValues(,) as double
-    '          0:    1:
-    '   0:  |    |   |    
-    '   1:  |    |   |
-    '   2:  |    |   |
-    '   3:  |    |   |
-    '   4:  |    |   |
-    '   5:  |    |   |
-    '   6:  |    |   |
+    Dim polRectValues(2, 3) As Double
+    '           0:     1:       2:       3:
+    '   0:  |  XC1  | XC1θ  |  XC1R  |  XC1J    
+    '   1:  |  XL1  | XL1θ  |  XL1R  |  XL1J
+    '   2:  |  XC2  | XC2θ  |  XC2R  |  XC2J
 
     'Custom Methods
     ''' <summary>
@@ -50,16 +45,28 @@ Public Class CircuitForm
         circuitValues(2, 0) = CDbl(C1TextBox.Text)
         'Calculate and Populate XC1
         circuitValues(2, 1) = CalculateXC(circuitValues(0, 1), circuitValues(2, 0))
+        polRectValues(0, 0) = circuitValues(2, 1)
+        polRectValues(0, 1) = -90
+        polRectValues(0, 2) = 0
+        polRectValues(0, 3) = (polRectValues(0, 1) * -1)
         'Populate L1 Value
         circuitValues(3, 0) = CDbl(L1TextBox.Text)
         'Calculate and Populate XL1
         circuitValues(3, 1) = CalculateXL(circuitValues(0, 1), circuitValues(3, 0))
+        polRectValues(1, 0) = circuitValues(3, 1)
+        'polRectValues(1, 1) = find phase angle including RW here
+        polRectValues(1, 2) = circuitValues(4, 0)
+        polRectValues(1, 3) = polRectValues(1, 0)
         'Populate RW Value
         circuitValues(4, 0) = CDbl(RwTextBox.Text)
         'Populate C2 Value
         circuitValues(5, 0) = CDbl(C2TextBox.Text)
         'Calculate and Populate CX2
         circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0))
+        polRectValues(2, 0) = circuitValues(5, 1)
+        polRectValues(2, 1) = -90
+        polRectValues(2, 2) = 0
+        polRectValues(2, 3) = (polRectValues(2, 0) * -1)
         'Populate R2 Value
         circuitValues(6, 0) = CDbl(R2TextBox.Text)
         MsgBox("User input values have been saved")
