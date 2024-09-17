@@ -141,6 +141,7 @@ Public Class CircuitForm
     ''' Loads Default values into Array and updates Text boxes
     ''' </summary>
     Sub LoadDefaults()
+        '******************Should change this to just set text box values and then call loadcircuit values*********************
         'Load Default Values: Vgen = 12V, F = 100, R1 = 50, C1 = 1μF, L1 = 1H, RW = 50, C2 = 1μF, R2 = 500
         circuitValues = {{12, 100}, {50, 0}, {0.000001, 0}, {1, 0}, {50, 0}, {0.000001, 0}, {500, 0}}
         'Calculate Default XC1
