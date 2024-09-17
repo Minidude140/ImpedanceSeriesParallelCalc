@@ -181,4 +181,5 @@ Public Class CircuitForm
     Private Sub RestoreDefaultsButton_Click(sender As Object, e As EventArgs) Handles RestoreDefaultsButton.Click
         LoadDefaults()
     End Sub
+
 End Class
