@@ -39,14 +39,14 @@ Partial Class CircuitForm
         '
         'C1TextBox
         '
-        Me.C1TextBox.Location = New System.Drawing.Point(355, 45)
+        Me.C1TextBox.Location = New System.Drawing.Point(331, 122)
         Me.C1TextBox.Name = "C1TextBox"
         Me.C1TextBox.Size = New System.Drawing.Size(66, 22)
         Me.C1TextBox.TabIndex = 3
         '
         'R1TextBox
         '
-        Me.R1TextBox.Location = New System.Drawing.Point(526, 56)
+        Me.R1TextBox.Location = New System.Drawing.Point(480, 122)
         Me.R1TextBox.Name = "R1TextBox"
         Me.R1TextBox.Size = New System.Drawing.Size(66, 22)
         Me.R1TextBox.TabIndex = 4
@@ -60,14 +60,14 @@ Partial Class CircuitForm
         '
         'C2TextBox
         '
-        Me.C2TextBox.Location = New System.Drawing.Point(1110, 183)
+        Me.C2TextBox.Location = New System.Drawing.Point(1046, 174)
         Me.C2TextBox.Name = "C2TextBox"
         Me.C2TextBox.Size = New System.Drawing.Size(66, 22)
         Me.C2TextBox.TabIndex = 7
         '
         'R2TextBox
         '
-        Me.R2TextBox.Location = New System.Drawing.Point(1095, 336)
+        Me.R2TextBox.Location = New System.Drawing.Point(1046, 304)
         Me.R2TextBox.Name = "R2TextBox"
         Me.R2TextBox.Size = New System.Drawing.Size(66, 22)
         Me.R2TextBox.TabIndex = 8
@@ -96,6 +96,7 @@ Partial Class CircuitForm
         'CircuitPictureBox
         '
         Me.CircuitPictureBox.BackgroundImage = Global.ImpedanceSeriesParallelCalc.My.Resources.Resources.CircuitImage1
+        Me.CircuitPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.CircuitPictureBox.Location = New System.Drawing.Point(12, 28)
         Me.CircuitPictureBox.Name = "CircuitPictureBox"
         Me.CircuitPictureBox.Size = New System.Drawing.Size(1204, 461)

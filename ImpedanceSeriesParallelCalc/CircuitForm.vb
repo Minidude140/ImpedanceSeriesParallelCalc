@@ -25,6 +25,16 @@ Public Class CircuitForm
     '   5:  | C2   | XC2  |
     '   6:  | R2   |  x   |
 
+    'Dim calculatedValues(,) as double
+    '          0:    1:
+    '   0:  |    |   |    
+    '   1:  |    |   |
+    '   2:  |    |   |
+    '   3:  |    |   |
+    '   4:  |    |   |
+    '   5:  |    |   |
+    '   6:  |    |   |
+
     'Custom Methods
     ''' <summary>
     ''' Populates and Calculates Input Circuit Values
