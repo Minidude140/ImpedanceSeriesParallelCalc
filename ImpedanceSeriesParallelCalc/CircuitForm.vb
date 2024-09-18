@@ -51,14 +51,14 @@ Public Class CircuitForm
         polRectValues(0, 3) = (polRectValues(0, 0) * -1)
         'Populate L1 Value
         circuitValues(3, 0) = CDbl(L1TextBox.Text)
-        'Calculate and Populate XL1
-        circuitValues(3, 1) = CalculateXL(circuitValues(0, 1), circuitValues(3, 0))
-        polRectValues(1, 0) = circuitValues(3, 1)
-        'polRectValues(1, 1) = find phase angle including RW here
-        polRectValues(1, 2) = circuitValues(4, 0)
-        polRectValues(1, 3) = polRectValues(1, 0)
         'Populate RW Value
         circuitValues(4, 0) = CDbl(RwTextBox.Text)
+        'Calculate and Populate XL1
+        circuitValues(3, 1) = CalculateXL(circuitValues(0, 1), circuitValues(3, 0))
+        polRectValues(1, 0) = RectToPol(circuitValues(4, 0), circuitValues(3, 1))(0)
+        polRectValues(1, 1) = RectToPol(circuitValues(4, 0), circuitValues(3, 1))(1)
+        polRectValues(1, 2) = circuitValues(4, 0)
+        polRectValues(1, 3) = circuitValues(3, 1)
         'Populate C2 Value
         circuitValues(5, 0) = CDbl(C2TextBox.Text)
         'Calculate and Populate CX2
@@ -150,6 +150,32 @@ Public Class CircuitForm
         R2TextBox.Text = "500"
         LoadCircuitValues()
     End Sub
+
+    ''' <summary>
+    ''' Converts Polar Coordinates to Rectangular Coordinates Return(0) is real Return(1) is imaginary
+    ''' </summary>
+    ''' <param name="vector"></param>
+    ''' <param name="angle"></param>
+    ''' <returns></returns>
+    Function PolToRect(vector As Double, angle As Double) As Double()
+        Dim rectangularForm(1) As Double
+        rectangularForm(0) = (vector * System.Math.Cos(angle))
+        rectangularForm(1) = (vector * System.Math.Sin(angle))
+        Return rectangularForm
+    End Function
+
+    ''' <summary>
+    ''' Converts Rectangular Coordinates to Polar Coordinates Return(0) is vector Return(1) is angle
+    ''' </summary>
+    ''' <param name="real"></param>
+    ''' <param name="imaginary"></param>
+    ''' <returns></returns>
+    Function RectToPol(real As Double, imaginary As Double) As Double()
+        Dim polarForm(1) As Double
+        polarForm(0) = System.Math.Sqrt((real ^ 2) + (imaginary ^ 2))
+        polarForm(1) = ((System.Math.Atan(imaginary / real) * 180) / pi)
+        Return polarForm
+    End Function
 
     'Event Handlers
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
