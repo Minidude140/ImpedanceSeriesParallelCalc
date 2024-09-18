@@ -48,7 +48,7 @@ Public Class CircuitForm
         polRectValues(0, 0) = circuitValues(2, 1)
         polRectValues(0, 1) = -90
         polRectValues(0, 2) = 0
-        polRectValues(0, 3) = (polRectValues(0, 1) * -1)
+        polRectValues(0, 3) = (polRectValues(0, 0) * -1)
         'Populate L1 Value
         circuitValues(3, 0) = CDbl(L1TextBox.Text)
         'Calculate and Populate XL1
@@ -69,7 +69,6 @@ Public Class CircuitForm
         polRectValues(2, 3) = (polRectValues(2, 0) * -1)
         'Populate R2 Value
         circuitValues(6, 0) = CDbl(R2TextBox.Text)
-        MsgBox("User input values have been saved")
     End Sub
 
     ''' <summary>
@@ -141,24 +140,15 @@ Public Class CircuitForm
     ''' Loads Default values into Array and updates Text boxes
     ''' </summary>
     Sub LoadDefaults()
-        '******************Should change this to just set text box values and then call loadcircuit values*********************
-        'Load Default Values: Vgen = 12V, F = 100, R1 = 50, C1 = 1μF, L1 = 1H, RW = 50, C2 = 1μF, R2 = 500
-        circuitValues = {{12, 100}, {50, 0}, {0.000001, 0}, {1, 0}, {50, 0}, {0.000001, 0}, {500, 0}}
-        'Calculate Default XC1
-        circuitValues(2, 1) = CalculateXC(circuitValues(0, 1), circuitValues(2, 0))
-        'Calculate Default XL1
-        circuitValues(3, 1) = CalculateXL(circuitValues(0, 1), circuitValues(3, 0))
-        'Calculate Default XC2
-        circuitValues(5, 1) = CalculateXC(circuitValues(0, 1), circuitValues(5, 0))
-        'Update Text boxes with defaults
-        VgenTextBox.Text = CStr(circuitValues(0, 0))
-        FrequencyTextBox.Text = CStr(circuitValues(0, 1))
-        R1TextBox.Text = CStr(circuitValues(1, 0))
-        C1TextBox.Text = CStr(circuitValues(2, 0))
-        L1TextBox.Text = CStr(circuitValues(3, 0))
-        RwTextBox.Text = CStr(circuitValues(4, 0))
-        C2TextBox.Text = CStr(circuitValues(5, 0))
-        R2TextBox.Text = CStr(circuitValues(6, 0))
+        VgenTextBox.Text = "12"
+        FrequencyTextBox.Text = "1000"
+        R1TextBox.Text = "50"
+        C1TextBox.Text = "0.000001"
+        L1TextBox.Text = "1"
+        RwTextBox.Text = "50"
+        C2TextBox.Text = "0.000001"
+        R2TextBox.Text = "500"
+        LoadCircuitValues()
     End Sub
 
     'Event Handlers
@@ -173,6 +163,7 @@ Public Class CircuitForm
             If UserInputValidation() = True Then
                 'Load numbers into array
                 LoadCircuitValues()
+                MsgBox("User input values have been saved")
             Else
                 'Not all numbers throw exception
                 Throw New Exception()
