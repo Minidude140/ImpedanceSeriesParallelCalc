@@ -29,7 +29,7 @@ Public Class CircuitForm
     '   0:  |  XC1  | XC1θ  |  XC1R  |  XC1J    
     '   1:  |  XL1  | XL1θ  |  XL1R  |  XL1J       ***XL values include R winding***
     '   2:  |  XC2  | XC2θ  |  XC2R  |  XC2J
-    Dim impedanceVales(3, 3) As Double
+    Dim impedanceValues(3, 3) As Double
     '           0:        1:         2:         3:
     '   0:  |  ZBR1    | ZBR1θ   |  ZBR1R   |  ZBR1J    
     '   1:  |  ZBR1/2  | ZBR1/2θ |  ZBR1/2R |  ZBR1/2J   ***ZBR2 = PolRectValues(1,x)****
@@ -155,6 +155,7 @@ Public Class CircuitForm
         C2TextBox.Text = "0.000001"
         R2TextBox.Text = "500"
         LoadCircuitValues()
+        CalculateBranch1()
     End Sub
 
     ''' <summary>
@@ -182,6 +183,18 @@ Public Class CircuitForm
         polarForm(1) = ((System.Math.Atan(imaginary / real) * 180) / pi)
         Return polarForm
     End Function
+
+    ''' <summary>
+    ''' Calculates C2 and R2 in series.  Stores values as rect and pol in impedanceValues(0,x)
+    ''' </summary>
+    Sub CalculateBranch1()
+        'set rectangular values R2 then C2
+        impedanceValues(0, 2) = circuitValues(6, 0) ' Real value is R2
+        impedanceValues(0, 3) = polRectValues(0, 3) 'Imaginary value is XC2
+        'convert and set polar values
+        impedanceValues(0, 0) = RectToPol(impedanceValues(0, 2), impedanceValues(0, 3))(0)
+        impedanceValues(0, 1) = RectToPol(impedanceValues(0, 2), impedanceValues(0, 3))(1)
+    End Sub
 
     'Event Handlers
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
