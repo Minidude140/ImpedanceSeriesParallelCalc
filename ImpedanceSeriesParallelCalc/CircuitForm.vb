@@ -7,7 +7,8 @@
 '[*]Load Circuit Values into array
 '[*]User input validation
 '[*]Load Default Circuit Values
-'[]Do Math
+'[1/2]Calculate Impedance Totals
+'[]Calculate Voltages and Currents
 '[]Create and populate list box with results
 '[]Output File with results;  Use print function
 
@@ -156,6 +157,7 @@ Public Class CircuitForm
         R2TextBox.Text = "500"
         LoadCircuitValues()
         CalculateBranch1()
+        CalculateSeriesComponents()
     End Sub
 
     ''' <summary>
@@ -185,15 +187,27 @@ Public Class CircuitForm
     End Function
 
     ''' <summary>
-    ''' Calculates C2 and R2 in series.  Stores values as rect and pol in impedanceValues(0,x)
+    ''' Calculates C2 and R2 in series.  Stores values as rectangular and polar in impedanceValues(0,x)
     ''' </summary>
     Sub CalculateBranch1()
         'set rectangular values R2 then C2
         impedanceValues(0, 2) = circuitValues(6, 0) ' Real value is R2
         impedanceValues(0, 3) = polRectValues(0, 3) 'Imaginary value is XC2
         'convert and set polar values
-        impedanceValues(0, 0) = RectToPol(impedanceValues(0, 2), impedanceValues(0, 3))(0)
-        impedanceValues(0, 1) = RectToPol(impedanceValues(0, 2), impedanceValues(0, 3))(1)
+        impedanceValues(0, 0) = RectToPol(impedanceValues(0, 2), impedanceValues(0, 3))(0) 'Set Vector
+        impedanceValues(0, 1) = RectToPol(impedanceValues(0, 2), impedanceValues(0, 3))(1) 'Set Phase Angle
+    End Sub
+
+    ''' <summary>
+    ''' Calculates R1 and C1 in series.  Stores values as rectangular and Polar in impedanceValues(2,x)
+    ''' </summary>
+    Sub CalculateSeriesComponents()
+        'Set rectangular vales R1 then C1
+        impedanceValues(2, 2) = circuitValues(1, 0) 'Real value is R1
+        impedanceValues(2, 3) = polRectValues(0, 3) 'imaginary vale is XC1
+        'convert and set polar values
+        impedanceValues(2, 0) = RectToPol(impedanceValues(2, 2), impedanceValues(2, 3))(0) 'Set Vector
+        impedanceValues(2, 1) = RectToPol(impedanceValues(2, 2), impedanceValues(2, 3))(1) 'Set Vector
     End Sub
 
     'Event Handlers
