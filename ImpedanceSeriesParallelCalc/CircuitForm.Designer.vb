@@ -42,6 +42,8 @@ Partial Class CircuitForm
         Me.RWUnitsLabel = New System.Windows.Forms.Label()
         Me.C2UnitsLabel = New System.Windows.Forms.Label()
         Me.R2UnitsLabel = New System.Windows.Forms.Label()
+        Me.Branch1Label = New System.Windows.Forms.Label()
+        Me.Branch2Label = New System.Windows.Forms.Label()
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -214,11 +216,31 @@ Partial Class CircuitForm
         Me.R2UnitsLabel.TabIndex = 19
         Me.R2UnitsLabel.Text = "Ω"
         '
+        'Branch1Label
+        '
+        Me.Branch1Label.AutoSize = True
+        Me.Branch1Label.Location = New System.Drawing.Point(974, 61)
+        Me.Branch1Label.Name = "Branch1Label"
+        Me.Branch1Label.Size = New System.Drawing.Size(65, 17)
+        Me.Branch1Label.TabIndex = 20
+        Me.Branch1Label.Text = "Branch 1"
+        '
+        'Branch2Label
+        '
+        Me.Branch2Label.AutoSize = True
+        Me.Branch2Label.Location = New System.Drawing.Point(695, 61)
+        Me.Branch2Label.Name = "Branch2Label"
+        Me.Branch2Label.Size = New System.Drawing.Size(65, 17)
+        Me.Branch2Label.TabIndex = 21
+        Me.Branch2Label.Text = "Branch 2"
+        '
         'CircuitForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1257, 652)
+        Me.Controls.Add(Me.Branch2Label)
+        Me.Controls.Add(Me.Branch1Label)
         Me.Controls.Add(Me.R2UnitsLabel)
         Me.Controls.Add(Me.C2UnitsLabel)
         Me.Controls.Add(Me.RWUnitsLabel)
@@ -268,4 +290,6 @@ Partial Class CircuitForm
     Friend WithEvents RWUnitsLabel As Label
     Friend WithEvents C2UnitsLabel As Label
     Friend WithEvents R2UnitsLabel As Label
+    Friend WithEvents Branch1Label As Label
+    Friend WithEvents Branch2Label As Label
 End Class

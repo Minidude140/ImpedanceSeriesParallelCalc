@@ -27,8 +27,14 @@ Public Class CircuitForm
     Dim polRectValues(2, 3) As Double
     '           0:     1:       2:       3:
     '   0:  |  XC1  | XC1θ  |  XC1R  |  XC1J    
-    '   1:  |  XL1  | XL1θ  |  XL1R  |  XL1J
+    '   1:  |  XL1  | XL1θ  |  XL1R  |  XL1J       ***XL values include R winding***
     '   2:  |  XC2  | XC2θ  |  XC2R  |  XC2J
+    Dim impedanceVales(3, 3) As Double
+    '           0:        1:         2:         3:
+    '   0:  |  ZBR1    | ZBR1θ   |  ZBR1R   |  ZBR1J    
+    '   1:  |  ZBR1/2  | ZBR1/2θ |  ZBR1/2R |  ZBR1/2J   ***ZBR2 = PolRectValues(1,x)****
+    '   2:  |  ZC1R1   | ZC1R1θ  |  ZC1R1R  |  ZC1R1J
+    '   3:  |  ZTOT    | ZTOTθ   |  ZTOTR   |  ZTOTj
 
     'Custom Methods
     ''' <summary>
