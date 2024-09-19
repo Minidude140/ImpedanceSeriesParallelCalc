@@ -12,8 +12,6 @@
 '[]Create and populate list box with results
 '[]Output File with results;  Use print function
 
-'*****Need to Fix Polar to Rectangular Conversion Function*****
-
 Option Explicit On
 Option Strict On
 Public Class CircuitForm
@@ -180,6 +178,8 @@ Public Class CircuitForm
     ''' <param name="angle"></param>
     ''' <returns></returns>
     Function PolToRect(vector As Double, angle As Double) As Double()
+        'convert angle from degrees to radians
+        angle = (angle * (pi / 180))
         Dim rectangularForm(1) As Double
         rectangularForm(0) = (vector * System.Math.Cos(angle))
         rectangularForm(1) = (vector * System.Math.Sin(angle))
@@ -267,7 +267,7 @@ Public Class CircuitForm
     ''' </summary>
     Sub CalculateVoltagesAndCurrents()
         'Calculate Current Total (Vgen / Ztot)
-        voltagesAndCurrents(0, 0) = (circuitValues(0, 0) / impedanceValues(3, 0)
+        voltagesAndCurrents(0, 0) = (circuitValues(0, 0) / impedanceValues(3, 0))
         'Calculate Current Total Phase angle (Vgenθ - Ztotθ)
         voltagesAndCurrents(0, 1) = (0 - impedanceValues(3, 1))
         'Calculate VR1 (Itot * R1)
