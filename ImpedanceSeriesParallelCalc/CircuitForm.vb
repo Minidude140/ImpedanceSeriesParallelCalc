@@ -8,7 +8,7 @@
 '[*]User input validation
 '[*]Load Default Circuit Values
 '[*]Calculate Impedance Totals
-'[]Calculate Voltages and Currents
+'[1/2]Calculate Voltages and Currents
 '[]Create and populate list box with results
 '[]Output File with results;  Use print function
 
@@ -46,7 +46,7 @@ Public Class CircuitForm
     '   2:  | VBR1/2 |   VBR1/2θ  |   x  |   x
     '   3:  | IBR1   |   IBR1θ    | IBR2 |  IBR2θ
     '   4:  | VL1    |   VL1θ     |   x  |   x
-    '   5:  | VC2    |   Vc2θ     |  VR2 |  VR2θ
+    '   5:  | VC2    |   VC2θ     |  VR2 |  VR2θ
 
     'Custom Methods
     ''' <summary>
@@ -263,6 +263,37 @@ Public Class CircuitForm
     End Sub
 
     Sub CalculateVoltagesAndCurrents()
+        'Calculate Current Total
+        voltagesAndCurrents(0, 0) = (circuitValues(0, 0) / impedanceValues(3, 0)
+        'Calculate Current Total Phase angle
+        voltagesAndCurrents(0, 1) = (0 - impedanceValues(3, 1))
+        'Calculate VR1
+        voltagesAndCurrents(1, 0) = (voltagesAndCurrents(0, 0) * circuitValues(1, 0))
+        'calculate VR1 phase angle
+        voltagesAndCurrents(1, 1) = voltagesAndCurrents(0, 1)
+        'Calculate VC1
+        voltagesAndCurrents(1, 2) = (voltagesAndCurrents(0, 0) * polRectValues(0, 0))
+        'Calculate VC1 phase angle
+        voltagesAndCurrents(1, 3) = (polRectValues(0, 1) + voltagesAndCurrents(0, 1))
+        'Calculate Voltage of Branch 1 and 2
+        voltagesAndCurrents(2, 0) = (circuitValues(0, 0) - (voltagesAndCurrents(1, 0) + voltagesAndCurrents(1, 2)))
+        'Calculate Voltage Phase angle of Branch 1 and 2
+
+        'Calculate Current of Branch 1
+
+        'Calculate VL1
+
+        'Calculate VL1 Phase angle
+
+        'Calculate Current of Branch 2
+
+        'Calculate VC2
+
+        'Calculate Phase angle of VC2
+
+        'Calculate VR2
+
+        'Calculate Phase angle of VR2
 
     End Sub
 
