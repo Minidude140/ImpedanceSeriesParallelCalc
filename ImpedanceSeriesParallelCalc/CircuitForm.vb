@@ -269,7 +269,7 @@ Public Class CircuitForm
         voltagesAndCurrents(0, 1) = (0 - impedanceValues(3, 1))
         'Calculate VR1 (Itot * R1)
         voltagesAndCurrents(1, 0) = (voltagesAndCurrents(0, 0) * circuitValues(1, 0))
-        'calculate VR1 phase angle (Itotθ + R1θ)
+        'calculate VR1 phase angle (=Itotθ)
         voltagesAndCurrents(1, 1) = voltagesAndCurrents(0, 1)
         'Calculate VC1 (Itot * XC1)
         voltagesAndCurrents(1, 2) = (voltagesAndCurrents(0, 0) * polRectValues(0, 0))
@@ -281,24 +281,24 @@ Public Class CircuitForm
         voltagesAndCurrents(2, 1) = (voltagesAndCurrents(0, 1) + impedanceValues(1, 1))
         'Calculate Current of Branch 1 (VBR1/2 / ZBR1)
         voltagesAndCurrents(3, 0) = (voltagesAndCurrents(2, 0) / impedanceValues(0, 0))
-        'Calculate the current phase angle of Branch 1 (VBR1/2θ - BR1θ)
-
+        'Calculate the current phase angle of Branch 1 (VBR1/2θ - ZBR1θ)
+        voltagesAndCurrents(3, 1) = (voltagesAndCurrents(2, 1) - impedanceValues(0, 1))
         'Calculate Current of Branch 2 (VBR1/2 / ZBR2)
-
+        voltagesAndCurrents(3, 2) = (voltagesAndCurrents(2, 0) / polRectValues(1, 0))
         'Calculate the Current Phase angle of branch 2 (VBR1/2θ - ZBR2θ)
-
+        voltagesAndCurrents(3, 3) = (voltagesAndCurrents(2, 1) / polRectValues(1, 1))
         'Calculate VL1 (IBR2 * XL1)
-
+        voltagesAndCurrents(4, 0) = (voltagesAndCurrents(3, 2) * polRectValues(1, 0))
         'Calculate VL1 Phase angle (IBR2θ + XL1θ)
-
+        voltagesAndCurrents(4, 1) = (voltagesAndCurrents(3, 3) + polRectValues(1, 1))
         'Calculate VC2 (IBR1 * XC2)
-
+        voltagesAndCurrents(5, 0) = (voltagesAndCurrents(3, 0) * polRectValues(2, 0))
         'Calculate Phase angle of VC2 (IBR1θ + XC2θ)
-
+        voltagesAndCurrents(5, 1) = (voltagesAndCurrents(3, 1) + polRectValues(2, 1))
         'Calculate VR2 (IBR1 * R2)
-
-        'Calculate Phase angle of VR2 (IBR1θ + R2θ)
-
+        voltagesAndCurrents(5, 2) = (voltagesAndCurrents(3, 0) * circuitValues(6, 0))
+        'Calculate Phase angle of VR2 (=IBR1θ)
+        voltagesAndCurrents(5, 3) = voltagesAndCurrents(3, 1)
     End Sub
 
     'Event Handlers
