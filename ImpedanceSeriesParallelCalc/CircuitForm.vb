@@ -39,6 +39,15 @@ Public Class CircuitForm
     '   2:  |  ZC1R1   | ZC1R1θ  |  ZC1R1R  |  ZC1R1J
     '   3:  |  ZTOT    | ZTOTθ   |  ZTOTR   |  ZTOTj
 
+    Dim voltagesAndCurrents(5, 1) As Double
+    '          0:       1:
+    '   0:  | Itot   |   x   |    
+    '   1:  | VR1    |  VC1  |
+    '   2:  | VBR1/2 |   x   |
+    '   3:  | IBR1   | IBR2  |
+    '   4:  | VL1    |   x   |
+    '   5:  | VC2    |  VR2  |
+
     'Custom Methods
     ''' <summary>
     ''' Populates and Calculates Input Circuit Values
