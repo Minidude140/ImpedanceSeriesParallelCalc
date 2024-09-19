@@ -262,6 +262,9 @@ Public Class CircuitForm
         impedanceValues(3, 1) = RectToPol(impedanceValues(3, 2), impedanceValues(3, 3))(1)
     End Sub
 
+    ''' <summary>
+    ''' Calculates Voltages and Currents (after impedances calculated)  Stored in voltagesAndCurrent(x,x)
+    ''' </summary>
     Sub CalculateVoltagesAndCurrents()
         'Calculate Current Total (Vgen / Ztot)
         voltagesAndCurrents(0, 0) = (circuitValues(0, 0) / impedanceValues(3, 0)
