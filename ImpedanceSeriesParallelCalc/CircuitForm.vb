@@ -7,10 +7,12 @@
 '[*]Load Circuit Values into array
 '[*]User input validation
 '[*]Load Default Circuit Values
-'[1/2]Calculate Impedance Totals
+'[*]Calculate Impedance Totals
 '[]Calculate Voltages and Currents
 '[]Create and populate list box with results
 '[]Output File with results;  Use print function
+
+'*****Need to Fix Polar to Rectangular Conversion Function*****
 
 Option Explicit On
 Option Strict On
@@ -235,6 +237,19 @@ Public Class CircuitForm
         impedanceValues(1, 2) = PolToRect(impedanceValues(1, 0), impedanceValues(1, 1))(0)
         impedanceValues(1, 3) = PolToRect(impedanceValues(1, 0), impedanceValues(1, 1))(1)
 
+    End Sub
+
+    ''' <summary>
+    ''' Calculated impedance total.  Stores values in impedanceValues(3,x)
+    ''' </summary>
+    Sub CalculateImpedanceTotal()
+        'add real components
+        impedanceValues(3, 2) = (impedanceValues(2, 2) + impedanceValues(1, 2))
+        'add imaginary components
+        impedanceValues(3, 3) = (impedanceValues(2, 3) + impedanceValues(1, 3))
+        'convert rectangular to polar and populate
+        impedanceValues(3, 0) = RectToPol(impedanceValues(3, 2), impedanceValues(3, 3))(0)
+        impedanceValues(3, 1) = RectToPol(impedanceValues(3, 2), impedanceValues(3, 3))(1)
     End Sub
 
     'Event Handlers
