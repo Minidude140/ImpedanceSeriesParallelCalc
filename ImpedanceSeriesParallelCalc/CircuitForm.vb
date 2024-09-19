@@ -40,13 +40,13 @@ Public Class CircuitForm
     '   3:  |  ZTOT    | ZTOTθ   |  ZTOTR   |  ZTOTj
 
     Dim voltagesAndCurrents(5, 1) As Double
-    '          0:       1:
-    '   0:  | Itot   |   x   |    
-    '   1:  | VR1    |  VC1  |
-    '   2:  | VBR1/2 |   x   |
-    '   3:  | IBR1   | IBR2  |
-    '   4:  | VL1    |   x   |
-    '   5:  | VC2    |  VR2  |
+    '          0:         1:         2:     3:
+    '   0:  | Itot   |   Itotθ    |   x  |   x
+    '   1:  | VR1    |   VR1θ     |  VC1 |  VC1θ
+    '   2:  | VBR1/2 |   VBR1/2θ  |   x  |   x
+    '   3:  | IBR1   |   IBR1θ    | IBR2 |  IBR2θ
+    '   4:  | VL1    |   VL1θ     |   x  |   x
+    '   5:  | VC2    |   Vc2θ     |  VR2 |  VR2θ
 
     'Custom Methods
     ''' <summary>
@@ -170,6 +170,7 @@ Public Class CircuitForm
         CalculateBranch1()
         CalculateSeriesComponents()
         CalculateParallelBranches()
+        CalculateImpedanceTotal()
     End Sub
 
     ''' <summary>
@@ -259,6 +260,10 @@ Public Class CircuitForm
         'convert rectangular to polar and populate
         impedanceValues(3, 0) = RectToPol(impedanceValues(3, 2), impedanceValues(3, 3))(0)
         impedanceValues(3, 1) = RectToPol(impedanceValues(3, 2), impedanceValues(3, 3))(1)
+    End Sub
+
+    Sub CalculateVoltagesAndCurrents()
+
     End Sub
 
     'Event Handlers
