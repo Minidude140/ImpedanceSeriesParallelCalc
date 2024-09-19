@@ -263,37 +263,41 @@ Public Class CircuitForm
     End Sub
 
     Sub CalculateVoltagesAndCurrents()
-        'Calculate Current Total
+        'Calculate Current Total (Vgen / Ztot)
         voltagesAndCurrents(0, 0) = (circuitValues(0, 0) / impedanceValues(3, 0)
-        'Calculate Current Total Phase angle
+        'Calculate Current Total Phase angle (Vgenθ - Ztotθ)
         voltagesAndCurrents(0, 1) = (0 - impedanceValues(3, 1))
-        'Calculate VR1
+        'Calculate VR1 (Itot * R1)
         voltagesAndCurrents(1, 0) = (voltagesAndCurrents(0, 0) * circuitValues(1, 0))
-        'calculate VR1 phase angle
+        'calculate VR1 phase angle (Itotθ + R1θ)
         voltagesAndCurrents(1, 1) = voltagesAndCurrents(0, 1)
-        'Calculate VC1
+        'Calculate VC1 (Itot * XC1)
         voltagesAndCurrents(1, 2) = (voltagesAndCurrents(0, 0) * polRectValues(0, 0))
-        'Calculate VC1 phase angle
+        'Calculate VC1 phase angle (Itotθ + XC1θ)
         voltagesAndCurrents(1, 3) = (polRectValues(0, 1) + voltagesAndCurrents(0, 1))
-        'Calculate Voltage of Branch 1 and 2
-        voltagesAndCurrents(2, 0) = (circuitValues(0, 0) - (voltagesAndCurrents(1, 0) + voltagesAndCurrents(1, 2)))
-        'Calculate Voltage Phase angle of Branch 1 and 2
+        'Calculate Voltage of Branch 1 and 2 (Itot * ZBR1/2)
+        voltagesAndCurrents(2, 0) = (voltagesAndCurrents(0, 0) * impedanceValues(1, 0))
+        'Calculate Voltage Phase angle of Branch 1 and 2 (Itotθ + ZBR1/2θ)
+        voltagesAndCurrents(2, 1) = (voltagesAndCurrents(0, 1) + impedanceValues(1, 1))
+        'Calculate Current of Branch 1 (VBR1/2 / ZBR1)
+        voltagesAndCurrents(3, 0) = (voltagesAndCurrents(2, 0) / impedanceValues(0, 0))
+        'Calculate the current phase angle of Branch 1 (VBR1/2θ - BR1θ)
 
-        'Calculate Current of Branch 1
+        'Calculate Current of Branch 2 (VBR1/2 / ZBR2)
 
-        'Calculate VL1
+        'Calculate the Current Phase angle of branch 2 (VBR1/2θ - ZBR2θ)
 
-        'Calculate VL1 Phase angle
+        'Calculate VL1 (IBR2 * XL1)
 
-        'Calculate Current of Branch 2
+        'Calculate VL1 Phase angle (IBR2θ + XL1θ)
 
-        'Calculate VC2
+        'Calculate VC2 (IBR1 * XC2)
 
-        'Calculate Phase angle of VC2
+        'Calculate Phase angle of VC2 (IBR1θ + XC2θ)
 
-        'Calculate VR2
+        'Calculate VR2 (IBR1 * R2)
 
-        'Calculate Phase angle of VR2
+        'Calculate Phase angle of VR2 (IBR1θ + R2θ)
 
     End Sub
 
