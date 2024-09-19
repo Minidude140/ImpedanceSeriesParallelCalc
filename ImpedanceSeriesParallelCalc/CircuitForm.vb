@@ -28,7 +28,7 @@ Public Class CircuitForm
     Dim polRectValues(2, 3) As Double
     '           0:     1:       2:       3:
     '   0:  |  XC1  | XC1θ  |  XC1R  |  XC1J    
-    '   1:  |  XL1  | XL1θ  |  XL1R  |  XL1J       ***XL values include R winding***
+    '   1:  |  XL1  | XL1θ  |  XL1R  |  XL1J       ***XL values include R winding(ZBR2)***
     '   2:  |  XC2  | XC2θ  |  XC2R  |  XC2J
     Dim impedanceValues(3, 3) As Double
     '           0:        1:         2:         3:
@@ -158,6 +158,7 @@ Public Class CircuitForm
         LoadCircuitValues()
         CalculateBranch1()
         CalculateSeriesComponents()
+        CalculateParallelBranches()
     End Sub
 
     ''' <summary>
@@ -207,7 +208,33 @@ Public Class CircuitForm
         impedanceValues(2, 3) = polRectValues(0, 3) 'imaginary vale is XC1
         'convert and set polar values
         impedanceValues(2, 0) = RectToPol(impedanceValues(2, 2), impedanceValues(2, 3))(0) 'Set Vector
-        impedanceValues(2, 1) = RectToPol(impedanceValues(2, 2), impedanceValues(2, 3))(1) 'Set Vector
+        impedanceValues(2, 1) = RectToPol(impedanceValues(2, 2), impedanceValues(2, 3))(1) 'Set Angle
+    End Sub
+
+    ''' <summary>
+    ''' Uses Product over sum to calculate parallel impedance.  Stores values in impedancevalues(1,x)
+    ''' </summary>
+    Sub CalculateParallelBranches()
+        'product(0) is the vector magnitudes  product(1) is the phase angles
+        Dim product(1) As Double
+        'sum(0) is real value  sum(1) is imaginary
+        Dim sum(1) As Double
+        'multiply the magnitudes
+        product(0) = (impedanceValues(0, 0) * polRectValues(1, 0))
+        'add the phase angles
+        product(1) = (impedanceValues(0, 1) + polRectValues(1, 1))
+        'add real values
+        sum(0) = (impedanceValues(0, 2) + polRectValues(1, 2))
+        'add imaginary values
+        sum(1) = (impedanceValues(0, 3) + polRectValues(1, 3))
+        'divide to find parallel total polar magnitude
+        impedanceValues(1, 0) = (product(0) / RectToPol(sum(0), sum(1))(0))
+        'subtract to find parallel total phase angle
+        impedanceValues(1, 1) = (product(1) - RectToPol(sum(0), sum(1))(1))
+        'convert and populate rectangular values
+        impedanceValues(1, 2) = PolToRect(impedanceValues(1, 0), impedanceValues(1, 1))(0)
+        impedanceValues(1, 3) = PolToRect(impedanceValues(1, 0), impedanceValues(1, 1))(1)
+
     End Sub
 
     'Event Handlers
