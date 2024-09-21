@@ -22,6 +22,7 @@ Partial Class CircuitForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.C1TextBox = New System.Windows.Forms.TextBox()
         Me.R1TextBox = New System.Windows.Forms.TextBox()
         Me.L1TextBox = New System.Windows.Forms.TextBox()
@@ -46,6 +47,7 @@ Partial Class CircuitForm
         Me.Branch2Label = New System.Windows.Forms.Label()
         Me.OutputListBox = New System.Windows.Forms.ListBox()
         Me.ExportResultsButton = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,6 +58,7 @@ Partial Class CircuitForm
         Me.C1TextBox.Name = "C1TextBox"
         Me.C1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.C1TextBox.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.C1TextBox, "Enter Capacitance Here")
         '
         'R1TextBox
         '
@@ -64,6 +67,7 @@ Partial Class CircuitForm
         Me.R1TextBox.Name = "R1TextBox"
         Me.R1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.R1TextBox.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.R1TextBox, "Enter Resistance Here")
         '
         'L1TextBox
         '
@@ -72,6 +76,7 @@ Partial Class CircuitForm
         Me.L1TextBox.Name = "L1TextBox"
         Me.L1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.L1TextBox.TabIndex = 5
+        Me.ToolTip1.SetToolTip(Me.L1TextBox, "Enter Inductance Here")
         '
         'C2TextBox
         '
@@ -80,6 +85,7 @@ Partial Class CircuitForm
         Me.C2TextBox.Name = "C2TextBox"
         Me.C2TextBox.Size = New System.Drawing.Size(50, 20)
         Me.C2TextBox.TabIndex = 7
+        Me.ToolTip1.SetToolTip(Me.C2TextBox, "Enter Capacitance Here")
         '
         'R2TextBox
         '
@@ -88,6 +94,7 @@ Partial Class CircuitForm
         Me.R2TextBox.Name = "R2TextBox"
         Me.R2TextBox.Size = New System.Drawing.Size(50, 20)
         Me.R2TextBox.TabIndex = 8
+        Me.ToolTip1.SetToolTip(Me.R2TextBox, "Enter Resistance Here")
         '
         'VgenTextBox
         '
@@ -96,6 +103,7 @@ Partial Class CircuitForm
         Me.VgenTextBox.Name = "VgenTextBox"
         Me.VgenTextBox.Size = New System.Drawing.Size(50, 20)
         Me.VgenTextBox.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.VgenTextBox, "Enter Volage Here")
         '
         'FrequencyTextBox
         '
@@ -104,6 +112,7 @@ Partial Class CircuitForm
         Me.FrequencyTextBox.Name = "FrequencyTextBox"
         Me.FrequencyTextBox.Size = New System.Drawing.Size(50, 20)
         Me.FrequencyTextBox.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.FrequencyTextBox, "Enter Frequnecy Here")
         '
         'RwTextBox
         '
@@ -112,6 +121,7 @@ Partial Class CircuitForm
         Me.RwTextBox.Name = "RwTextBox"
         Me.RwTextBox.Size = New System.Drawing.Size(50, 20)
         Me.RwTextBox.TabIndex = 6
+        Me.ToolTip1.SetToolTip(Me.RwTextBox, "Enter Winding Resistance Here")
         '
         'CircuitPictureBox
         '
@@ -133,8 +143,9 @@ Partial Class CircuitForm
         Me.QuitButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(108, 53)
-        Me.QuitButton.TabIndex = 9
+        Me.QuitButton.TabIndex = 12
         Me.QuitButton.Text = "Quit"
+        Me.ToolTip1.SetToolTip(Me.QuitButton, "Exit the Program")
         Me.QuitButton.UseVisualStyleBackColor = True
         '
         'CalculateButton
@@ -146,8 +157,9 @@ Partial Class CircuitForm
         Me.CalculateButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CalculateButton.Name = "CalculateButton"
         Me.CalculateButton.Size = New System.Drawing.Size(343, 53)
-        Me.CalculateButton.TabIndex = 10
+        Me.CalculateButton.TabIndex = 9
         Me.CalculateButton.Text = "Calculate " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Values"
+        Me.ToolTip1.SetToolTip(Me.CalculateButton, "Calculate Current Values and Update Results")
         Me.CalculateButton.UseVisualStyleBackColor = True
         '
         'RestoreDefaultsButton
@@ -159,8 +171,9 @@ Partial Class CircuitForm
         Me.RestoreDefaultsButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.RestoreDefaultsButton.Name = "RestoreDefaultsButton"
         Me.RestoreDefaultsButton.Size = New System.Drawing.Size(108, 53)
-        Me.RestoreDefaultsButton.TabIndex = 11
+        Me.RestoreDefaultsButton.TabIndex = 10
         Me.RestoreDefaultsButton.Text = "Restore" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Defaults"
+        Me.ToolTip1.SetToolTip(Me.RestoreDefaultsButton, "Restore Values To Default and Update Results")
         Me.RestoreDefaultsButton.UseVisualStyleBackColor = True
         '
         'HzLabel
@@ -280,8 +293,9 @@ Partial Class CircuitForm
         Me.ExportResultsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ExportResultsButton.Name = "ExportResultsButton"
         Me.ExportResultsButton.Size = New System.Drawing.Size(108, 53)
-        Me.ExportResultsButton.TabIndex = 23
+        Me.ExportResultsButton.TabIndex = 11
         Me.ExportResultsButton.Text = "Export" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Results"
+        Me.ToolTip1.SetToolTip(Me.ExportResultsButton, "Export Results to Text File")
         Me.ExportResultsButton.UseVisualStyleBackColor = True
         '
         'CircuitForm
@@ -347,4 +361,5 @@ Partial Class CircuitForm
     Friend WithEvents Branch2Label As Label
     Friend WithEvents OutputListBox As ListBox
     Friend WithEvents ExportResultsButton As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

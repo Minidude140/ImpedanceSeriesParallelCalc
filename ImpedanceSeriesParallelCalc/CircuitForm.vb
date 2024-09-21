@@ -12,8 +12,8 @@
 '[*]Create and populate list box with results
 '[*]Output File with results;  Use print function
 '[]Add Tool Strip Buttons
-'[]Add Tool Tip Messages
-'[]Add Tab Stop 
+'[*]Add Tool Tip Messages
+'[*]Add Tab Stop 
 '[]Customize List Box
 '[]Need to Test Calculations
 '[]Possibly change default values
