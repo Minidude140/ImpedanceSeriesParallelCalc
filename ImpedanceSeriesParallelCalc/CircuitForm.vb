@@ -368,15 +368,26 @@ Public Class CircuitForm
     End Function
 
     Sub LoadListboxWithResults()
+        'Clear any previous list box values
+        OutputListBox.Items.Clear()
         'Show the input values
         OutputListBox.Items.Add("Input Circuit Values:")
         OutputListBox.Items.Add($"Voltage: {FormatEngNot(circuitValues(0, 0))}V; Frequency: {FormatEngNot(circuitValues(0, 1))}Hz")
         OutputListBox.Items.Add($"R1= {FormatEngNot(circuitValues(1, 0))}Ω; C= {FormatEngNot(circuitValues(2, 0))}F; L1= {FormatEngNot(circuitValues(3, 0))}H; RW= {FormatEngNot(circuitValues(4, 0))}Ω; C2= {FormatEngNot(circuitValues(5, 0))}F; R2= {FormatEngNot(circuitValues(6, 0))}")
         'Show Calculated Values
+        OutputListBox.Items.Add("")
         OutputListBox.Items.Add("Component Impedances:")
-        OutputListBox.Items.Add($"XC1= {FormatEngNot(polRectValues(0, 0))}Ω ∠{CInt(polRectValues(0, 1))}°, ({FormatEngNot(polRectValues(0, 2))}, j{FormatEngNot(polRectValues(0, 3))})")
-        OutputListBox.Items.Add($"XL1= {FormatEngNot(polRectValues(1, 0))}Ω ∠{CInt(polRectValues(1, 1))}°, ({FormatEngNot(polRectValues(1, 2))}, j{FormatEngNot(polRectValues(1, 3))})")
-        OutputListBox.Items.Add($"XC2= {FormatEngNot(polRectValues(2, 0))}Ω ∠{CInt(polRectValues(2, 1))}°, ({FormatEngNot(polRectValues(2, 2))}, j{FormatEngNot(polRectValues(2, 3))})")
+        OutputListBox.Items.Add($"XC1= {FormatEngNot(polRectValues(0,0))}Ω ∠{CInt(polRectValues(0,1))}°; ({FormatEngNot(polRectValues(0,2))}, j{FormatEngNot(polRectValues(0,3))})")
+        OutputListBox.Items.Add($"XL1= {FormatEngNot(polRectValues(1,0))}Ω ∠{CInt(polRectValues(1,1))}°; ({FormatEngNot(polRectValues(1,2))}, j{FormatEngNot(polRectValues(1,3))})")
+        OutputListBox.Items.Add($"XC2= {FormatEngNot(polRectValues(2,0))}Ω ∠{CInt(polRectValues(2,1))}°; ({FormatEngNot(polRectValues(2,2))}, j{FormatEngNot(polRectValues(2,3))})")
+        'Show Branch impedance Values
+        OutputListBox.Items.Add("")
+        OutputListBox.Items.Add("Calculated Branch Impedances:")
+        OutputListBox.Items.Add($"ZBR1= {FormatEngNot(impedanceValues(0, 0))}Ω ∠{CInt(impedanceValues(0, 1))}°; ({FormatEngNot(impedanceValues(0, 2))}, j{FormatEngNot(impedanceValues(0, 3))})")
+        OutputListBox.Items.Add($"ZBR2= {FormatEngNot(polRectValues(1, 0))}Ω ∠{CInt(polRectValues(1, 1))}°; ({FormatEngNot(polRectValues(1, 2))}, j{FormatEngNot(polRectValues(1, 3))})")
+        OutputListBox.Items.Add($"ZBR1//ZBR2= {FormatEngNot(impedanceValues(1, 0))}Ω ∠{CInt(impedanceValues(1, 1))}°; ({FormatEngNot(impedanceValues(1, 2))}, j{FormatEngNot(impedanceValues(1, 3))})")
+        OutputListBox.Items.Add($"XC1+R1= {FormatEngNot(impedanceValues(2, 0))}Ω ∠{CInt(impedanceValues(2, 1))}°; ({FormatEngNot(impedanceValues(2, 2))}, j{FormatEngNot(impedanceValues(2, 3))})")
+        OutputListBox.Items.Add($"ZTotal= {FormatEngNot(impedanceValues(3, 0))}Ω ∠{CInt(impedanceValues(3, 1))}°; ({FormatEngNot(impedanceValues(3, 2))}, j{FormatEngNot(impedanceValues(3, 3))})")
 
     End Sub
 
