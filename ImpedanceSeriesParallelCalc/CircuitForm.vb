@@ -304,6 +304,68 @@ Public Class CircuitForm
         voltagesAndCurrents(5, 3) = voltagesAndCurrents(3, 1)
     End Sub
 
+    ''' <summary>
+    ''' Returns a string cleaned and formatted into engineering notation from given double point
+    ''' </summary>
+    ''' <param name="value"></param>
+    ''' <returns></returns>
+    Function FormatEngNot(value As Double) As String
+        Dim tempSplit() As String
+        Dim mantissa As Double
+        Dim exponent As Double
+        Dim metricSuffix As String
+        'Split the value into value, the mantissa, and exponent in scientific notation
+        tempSplit = Split(value.ToString("e"), "e")
+        mantissa = CDbl(tempSplit(0))
+        exponent = CDbl(tempSplit(1))
+        'Shift until 3 decimal places for engineering notation
+        Do While exponent Mod 3 <> 0
+            exponent -= 1
+            mantissa *= 10
+        Loop
+        'Set metric suffix dependent on exponent level
+        Select Case exponent
+            Case = 24 'Yotta
+                metricSuffix = "Y"
+            Case = 21 'Zetta
+                metricSuffix = "Z"
+            Case = 18 'Exa
+                metricSuffix = "E"
+            Case = 15 'Peta
+                metricSuffix = "P"
+            Case = 12 'Tera
+                metricSuffix = "T"
+            Case = 9 'Giga
+                metricSuffix = "G"
+            Case = 6 'Mega
+                metricSuffix = "M"
+            Case = 3 'Kilo
+                metricSuffix = "K"
+            Case = 0 'Notta
+                metricSuffix = ""
+            Case = -3 'Mili
+                metricSuffix = "m"
+            Case = -6 'Micro
+                metricSuffix = "μ"
+            Case = -9 'nano
+                metricSuffix = "n"
+            Case = -12 'pico
+                metricSuffix = "p"
+            Case = -15 'femto
+                metricSuffix = "f"
+            Case = -18 'atto
+                metricSuffix = "a"
+            Case = -21 'zepto
+                metricSuffix = "z"
+            Case = -24 'yocto
+                metricSuffix = "y"
+            Case Else
+                metricSuffix = $"x10^{exponent}"
+        End Select
+        'Return value in engineering notation
+        Return $"{mantissa}{metricSuffix}"
+    End Function
+
     'Event Handlers
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
         'Close Program
