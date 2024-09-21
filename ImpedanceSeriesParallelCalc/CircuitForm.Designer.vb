@@ -126,30 +126,35 @@ Partial Class CircuitForm
         '
         'QuitButton
         '
+        Me.QuitButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.QuitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QuitButton.Location = New System.Drawing.Point(823, 420)
+        Me.QuitButton.Location = New System.Drawing.Point(815, 466)
         Me.QuitButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(108, 46)
+        Me.QuitButton.Size = New System.Drawing.Size(108, 53)
         Me.QuitButton.TabIndex = 9
         Me.QuitButton.Text = "Quit"
         Me.QuitButton.UseVisualStyleBackColor = True
         '
         'CalculateButton
         '
+        Me.CalculateButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CalculateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CalculateButton.Location = New System.Drawing.Point(9, 413)
+        Me.CalculateButton.Location = New System.Drawing.Point(285, 402)
         Me.CalculateButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CalculateButton.Name = "CalculateButton"
-        Me.CalculateButton.Size = New System.Drawing.Size(108, 53)
+        Me.CalculateButton.Size = New System.Drawing.Size(343, 53)
         Me.CalculateButton.TabIndex = 10
         Me.CalculateButton.Text = "Calculate " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Values"
         Me.CalculateButton.UseVisualStyleBackColor = True
         '
         'RestoreDefaultsButton
         '
+        Me.RestoreDefaultsButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RestoreDefaultsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RestoreDefaultsButton.Location = New System.Drawing.Point(9, 470)
+        Me.RestoreDefaultsButton.Location = New System.Drawing.Point(404, 459)
         Me.RestoreDefaultsButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.RestoreDefaultsButton.Name = "RestoreDefaultsButton"
         Me.RestoreDefaultsButton.Size = New System.Drawing.Size(108, 53)
@@ -259,17 +264,18 @@ Partial Class CircuitForm
         '
         'OutputListBox
         '
+        Me.OutputListBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.OutputListBox.FormattingEnabled = True
-        Me.OutputListBox.Location = New System.Drawing.Point(122, 410)
+        Me.OutputListBox.Location = New System.Drawing.Point(928, 23)
         Me.OutputListBox.Name = "OutputListBox"
-        Me.OutputListBox.Size = New System.Drawing.Size(696, 108)
+        Me.OutputListBox.Size = New System.Drawing.Size(298, 498)
         Me.OutputListBox.TabIndex = 22
         '
         'CircuitForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(944, 530)
+        Me.ClientSize = New System.Drawing.Size(1238, 530)
         Me.Controls.Add(Me.OutputListBox)
         Me.Controls.Add(Me.Branch2Label)
         Me.Controls.Add(Me.Branch1Label)
@@ -294,7 +300,7 @@ Partial Class CircuitForm
         Me.Controls.Add(Me.C1TextBox)
         Me.Controls.Add(Me.CircuitPictureBox)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.MinimumSize = New System.Drawing.Size(960, 45)
+        Me.MinimumSize = New System.Drawing.Size(1254, 569)
         Me.Name = "CircuitForm"
         Me.Text = "Circuit Calculator"
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
