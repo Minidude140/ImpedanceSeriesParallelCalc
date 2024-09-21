@@ -169,6 +169,7 @@ Public Class CircuitForm
         CalculateSeriesComponents()
         CalculateParallelBranches()
         CalculateImpedanceTotal()
+        LoadListboxWithResults()
     End Sub
 
     ''' <summary>
@@ -365,6 +366,16 @@ Public Class CircuitForm
         'Return value in engineering notation
         Return $"{mantissa}{metricSuffix}"
     End Function
+
+    Sub LoadListboxWithResults()
+        'Show the input values
+        OutputListBox.Items.Add("Input Circuit Values:")
+        OutputListBox.Items.Add($"Voltage: {FormatEngNot(circuitValues(0, 0))}V; Frequency: {FormatEngNot(circuitValues(0, 1))}Hz")
+        OutputListBox.Items.Add($"R1= {FormatEngNot(circuitValues(1, 0))}Ω; C= {FormatEngNot(circuitValues(2, 0))}F; L1= {FormatEngNot(circuitValues(3, 0))}H; RW= {FormatEngNot(circuitValues(4, 0))}Ω; C2= {FormatEngNot(circuitValues(5, 0))}F; R2= {FormatEngNot(circuitValues(6, 0))}")
+        'Show Calculated Values
+        OutputListBox.Items.Add("Component Impedances:")
+        OutputListBox.Items.Add($"XC1= {FormatEngNot(polRectValues(1, 0))}")
+    End Sub
 
     'Event Handlers
     Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click

@@ -44,72 +44,82 @@ Partial Class CircuitForm
         Me.R2UnitsLabel = New System.Windows.Forms.Label()
         Me.Branch1Label = New System.Windows.Forms.Label()
         Me.Branch2Label = New System.Windows.Forms.Label()
+        Me.OutputListBox = New System.Windows.Forms.ListBox()
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'C1TextBox
         '
-        Me.C1TextBox.Location = New System.Drawing.Point(331, 122)
+        Me.C1TextBox.Location = New System.Drawing.Point(248, 99)
+        Me.C1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.C1TextBox.Name = "C1TextBox"
-        Me.C1TextBox.Size = New System.Drawing.Size(66, 22)
+        Me.C1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.C1TextBox.TabIndex = 3
         '
         'R1TextBox
         '
-        Me.R1TextBox.Location = New System.Drawing.Point(480, 122)
+        Me.R1TextBox.Location = New System.Drawing.Point(360, 99)
+        Me.R1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.R1TextBox.Name = "R1TextBox"
-        Me.R1TextBox.Size = New System.Drawing.Size(66, 22)
+        Me.R1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.R1TextBox.TabIndex = 4
         '
         'L1TextBox
         '
-        Me.L1TextBox.Location = New System.Drawing.Point(771, 216)
+        Me.L1TextBox.Location = New System.Drawing.Point(578, 176)
+        Me.L1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.L1TextBox.Name = "L1TextBox"
-        Me.L1TextBox.Size = New System.Drawing.Size(66, 22)
+        Me.L1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.L1TextBox.TabIndex = 5
         '
         'C2TextBox
         '
-        Me.C2TextBox.Location = New System.Drawing.Point(1046, 174)
+        Me.C2TextBox.Location = New System.Drawing.Point(784, 141)
+        Me.C2TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.C2TextBox.Name = "C2TextBox"
-        Me.C2TextBox.Size = New System.Drawing.Size(66, 22)
+        Me.C2TextBox.Size = New System.Drawing.Size(50, 20)
         Me.C2TextBox.TabIndex = 7
         '
         'R2TextBox
         '
-        Me.R2TextBox.Location = New System.Drawing.Point(1046, 304)
+        Me.R2TextBox.Location = New System.Drawing.Point(784, 247)
+        Me.R2TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.R2TextBox.Name = "R2TextBox"
-        Me.R2TextBox.Size = New System.Drawing.Size(66, 22)
+        Me.R2TextBox.Size = New System.Drawing.Size(50, 20)
         Me.R2TextBox.TabIndex = 8
         '
         'VgenTextBox
         '
-        Me.VgenTextBox.Location = New System.Drawing.Point(45, 188)
+        Me.VgenTextBox.Location = New System.Drawing.Point(34, 153)
+        Me.VgenTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.VgenTextBox.Name = "VgenTextBox"
-        Me.VgenTextBox.Size = New System.Drawing.Size(66, 22)
+        Me.VgenTextBox.Size = New System.Drawing.Size(50, 20)
         Me.VgenTextBox.TabIndex = 1
         '
         'FrequencyTextBox
         '
-        Me.FrequencyTextBox.Location = New System.Drawing.Point(45, 269)
+        Me.FrequencyTextBox.Location = New System.Drawing.Point(34, 219)
+        Me.FrequencyTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.FrequencyTextBox.Name = "FrequencyTextBox"
-        Me.FrequencyTextBox.Size = New System.Drawing.Size(66, 22)
+        Me.FrequencyTextBox.Size = New System.Drawing.Size(50, 20)
         Me.FrequencyTextBox.TabIndex = 2
         '
         'RwTextBox
         '
-        Me.RwTextBox.Location = New System.Drawing.Point(771, 272)
+        Me.RwTextBox.Location = New System.Drawing.Point(578, 221)
+        Me.RwTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.RwTextBox.Name = "RwTextBox"
-        Me.RwTextBox.Size = New System.Drawing.Size(66, 22)
+        Me.RwTextBox.Size = New System.Drawing.Size(50, 20)
         Me.RwTextBox.TabIndex = 6
         '
         'CircuitPictureBox
         '
         Me.CircuitPictureBox.BackgroundImage = Global.ImpedanceSeriesParallelCalc.My.Resources.Resources.CircuitImage1
         Me.CircuitPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.CircuitPictureBox.Location = New System.Drawing.Point(12, 28)
+        Me.CircuitPictureBox.Location = New System.Drawing.Point(9, 23)
+        Me.CircuitPictureBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CircuitPictureBox.Name = "CircuitPictureBox"
-        Me.CircuitPictureBox.Size = New System.Drawing.Size(1204, 461)
+        Me.CircuitPictureBox.Size = New System.Drawing.Size(903, 375)
         Me.CircuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.CircuitPictureBox.TabIndex = 0
         Me.CircuitPictureBox.TabStop = False
@@ -117,9 +127,10 @@ Partial Class CircuitForm
         'QuitButton
         '
         Me.QuitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QuitButton.Location = New System.Drawing.Point(1097, 517)
+        Me.QuitButton.Location = New System.Drawing.Point(823, 420)
+        Me.QuitButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(144, 56)
+        Me.QuitButton.Size = New System.Drawing.Size(108, 46)
         Me.QuitButton.TabIndex = 9
         Me.QuitButton.Text = "Quit"
         Me.QuitButton.UseVisualStyleBackColor = True
@@ -127,9 +138,10 @@ Partial Class CircuitForm
         'CalculateButton
         '
         Me.CalculateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CalculateButton.Location = New System.Drawing.Point(12, 508)
+        Me.CalculateButton.Location = New System.Drawing.Point(9, 413)
+        Me.CalculateButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CalculateButton.Name = "CalculateButton"
-        Me.CalculateButton.Size = New System.Drawing.Size(144, 65)
+        Me.CalculateButton.Size = New System.Drawing.Size(108, 53)
         Me.CalculateButton.TabIndex = 10
         Me.CalculateButton.Text = "Calculate " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Values"
         Me.CalculateButton.UseVisualStyleBackColor = True
@@ -137,9 +149,10 @@ Partial Class CircuitForm
         'RestoreDefaultsButton
         '
         Me.RestoreDefaultsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RestoreDefaultsButton.Location = New System.Drawing.Point(12, 579)
+        Me.RestoreDefaultsButton.Location = New System.Drawing.Point(9, 470)
+        Me.RestoreDefaultsButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.RestoreDefaultsButton.Name = "RestoreDefaultsButton"
-        Me.RestoreDefaultsButton.Size = New System.Drawing.Size(144, 65)
+        Me.RestoreDefaultsButton.Size = New System.Drawing.Size(108, 53)
         Me.RestoreDefaultsButton.TabIndex = 11
         Me.RestoreDefaultsButton.Text = "Restore" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Defaults"
         Me.RestoreDefaultsButton.UseVisualStyleBackColor = True
@@ -147,98 +160,117 @@ Partial Class CircuitForm
         'HzLabel
         '
         Me.HzLabel.AutoSize = True
-        Me.HzLabel.Location = New System.Drawing.Point(117, 272)
+        Me.HzLabel.Location = New System.Drawing.Point(88, 221)
+        Me.HzLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.HzLabel.Name = "HzLabel"
-        Me.HzLabel.Size = New System.Drawing.Size(25, 17)
+        Me.HzLabel.Size = New System.Drawing.Size(20, 13)
         Me.HzLabel.TabIndex = 12
         Me.HzLabel.Text = "Hz"
         '
         'VoltageLabel
         '
         Me.VoltageLabel.AutoSize = True
-        Me.VoltageLabel.Location = New System.Drawing.Point(117, 188)
+        Me.VoltageLabel.Location = New System.Drawing.Point(88, 153)
+        Me.VoltageLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.VoltageLabel.Name = "VoltageLabel"
-        Me.VoltageLabel.Size = New System.Drawing.Size(33, 17)
+        Me.VoltageLabel.Size = New System.Drawing.Size(26, 13)
         Me.VoltageLabel.TabIndex = 13
         Me.VoltageLabel.Text = "Vpp"
         '
         'C1UnitsLabel
         '
         Me.C1UnitsLabel.AutoSize = True
-        Me.C1UnitsLabel.Location = New System.Drawing.Point(403, 127)
+        Me.C1UnitsLabel.Location = New System.Drawing.Point(302, 103)
+        Me.C1UnitsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.C1UnitsLabel.Name = "C1UnitsLabel"
-        Me.C1UnitsLabel.Size = New System.Drawing.Size(16, 17)
+        Me.C1UnitsLabel.Size = New System.Drawing.Size(13, 13)
         Me.C1UnitsLabel.TabIndex = 14
         Me.C1UnitsLabel.Text = "F"
         '
         'R1UnitsLabel
         '
         Me.R1UnitsLabel.AutoSize = True
-        Me.R1UnitsLabel.Location = New System.Drawing.Point(552, 127)
+        Me.R1UnitsLabel.Location = New System.Drawing.Point(414, 103)
+        Me.R1UnitsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.R1UnitsLabel.Name = "R1UnitsLabel"
-        Me.R1UnitsLabel.Size = New System.Drawing.Size(19, 17)
+        Me.R1UnitsLabel.Size = New System.Drawing.Size(16, 13)
         Me.R1UnitsLabel.TabIndex = 15
         Me.R1UnitsLabel.Text = "Ω"
         '
         'L1UnitsLabel
         '
         Me.L1UnitsLabel.AutoSize = True
-        Me.L1UnitsLabel.Location = New System.Drawing.Point(843, 219)
+        Me.L1UnitsLabel.Location = New System.Drawing.Point(632, 178)
+        Me.L1UnitsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.L1UnitsLabel.Name = "L1UnitsLabel"
-        Me.L1UnitsLabel.Size = New System.Drawing.Size(18, 17)
+        Me.L1UnitsLabel.Size = New System.Drawing.Size(15, 13)
         Me.L1UnitsLabel.TabIndex = 16
         Me.L1UnitsLabel.Text = "H"
         '
         'RWUnitsLabel
         '
         Me.RWUnitsLabel.AutoSize = True
-        Me.RWUnitsLabel.Location = New System.Drawing.Point(843, 275)
+        Me.RWUnitsLabel.Location = New System.Drawing.Point(632, 223)
+        Me.RWUnitsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.RWUnitsLabel.Name = "RWUnitsLabel"
-        Me.RWUnitsLabel.Size = New System.Drawing.Size(19, 17)
+        Me.RWUnitsLabel.Size = New System.Drawing.Size(16, 13)
         Me.RWUnitsLabel.TabIndex = 17
         Me.RWUnitsLabel.Text = "Ω"
         '
         'C2UnitsLabel
         '
         Me.C2UnitsLabel.AutoSize = True
-        Me.C2UnitsLabel.Location = New System.Drawing.Point(1118, 177)
+        Me.C2UnitsLabel.Location = New System.Drawing.Point(838, 144)
+        Me.C2UnitsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.C2UnitsLabel.Name = "C2UnitsLabel"
-        Me.C2UnitsLabel.Size = New System.Drawing.Size(16, 17)
+        Me.C2UnitsLabel.Size = New System.Drawing.Size(13, 13)
         Me.C2UnitsLabel.TabIndex = 18
         Me.C2UnitsLabel.Text = "F"
         '
         'R2UnitsLabel
         '
         Me.R2UnitsLabel.AutoSize = True
-        Me.R2UnitsLabel.Location = New System.Drawing.Point(1118, 307)
+        Me.R2UnitsLabel.Location = New System.Drawing.Point(838, 249)
+        Me.R2UnitsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.R2UnitsLabel.Name = "R2UnitsLabel"
-        Me.R2UnitsLabel.Size = New System.Drawing.Size(19, 17)
+        Me.R2UnitsLabel.Size = New System.Drawing.Size(16, 13)
         Me.R2UnitsLabel.TabIndex = 19
         Me.R2UnitsLabel.Text = "Ω"
         '
         'Branch1Label
         '
         Me.Branch1Label.AutoSize = True
-        Me.Branch1Label.Location = New System.Drawing.Point(974, 61)
+        Me.Branch1Label.Location = New System.Drawing.Point(730, 50)
+        Me.Branch1Label.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Branch1Label.Name = "Branch1Label"
-        Me.Branch1Label.Size = New System.Drawing.Size(65, 17)
+        Me.Branch1Label.Size = New System.Drawing.Size(50, 13)
         Me.Branch1Label.TabIndex = 20
         Me.Branch1Label.Text = "Branch 1"
         '
         'Branch2Label
         '
         Me.Branch2Label.AutoSize = True
-        Me.Branch2Label.Location = New System.Drawing.Point(695, 61)
+        Me.Branch2Label.Location = New System.Drawing.Point(521, 50)
+        Me.Branch2Label.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Branch2Label.Name = "Branch2Label"
-        Me.Branch2Label.Size = New System.Drawing.Size(65, 17)
+        Me.Branch2Label.Size = New System.Drawing.Size(50, 13)
         Me.Branch2Label.TabIndex = 21
         Me.Branch2Label.Text = "Branch 2"
         '
+        'OutputListBox
+        '
+        Me.OutputListBox.FormattingEnabled = True
+        Me.OutputListBox.Location = New System.Drawing.Point(122, 410)
+        Me.OutputListBox.Name = "OutputListBox"
+        Me.OutputListBox.Size = New System.Drawing.Size(696, 108)
+        Me.OutputListBox.TabIndex = 22
+        '
         'CircuitForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1257, 652)
+        Me.ClientSize = New System.Drawing.Size(944, 530)
+        Me.Controls.Add(Me.OutputListBox)
         Me.Controls.Add(Me.Branch2Label)
         Me.Controls.Add(Me.Branch1Label)
         Me.Controls.Add(Me.R2UnitsLabel)
@@ -261,7 +293,8 @@ Partial Class CircuitForm
         Me.Controls.Add(Me.R1TextBox)
         Me.Controls.Add(Me.C1TextBox)
         Me.Controls.Add(Me.CircuitPictureBox)
-        Me.MinimumSize = New System.Drawing.Size(1275, 47)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimumSize = New System.Drawing.Size(960, 45)
         Me.Name = "CircuitForm"
         Me.Text = "Circuit Calculator"
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -292,4 +325,5 @@ Partial Class CircuitForm
     Friend WithEvents R2UnitsLabel As Label
     Friend WithEvents Branch1Label As Label
     Friend WithEvents Branch2Label As Label
+    Friend WithEvents OutputListBox As ListBox
 End Class
