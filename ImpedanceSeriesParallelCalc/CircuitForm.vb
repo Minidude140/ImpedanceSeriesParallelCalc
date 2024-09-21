@@ -374,7 +374,10 @@ Public Class CircuitForm
         OutputListBox.Items.Add($"R1= {FormatEngNot(circuitValues(1, 0))}Ω; C= {FormatEngNot(circuitValues(2, 0))}F; L1= {FormatEngNot(circuitValues(3, 0))}H; RW= {FormatEngNot(circuitValues(4, 0))}Ω; C2= {FormatEngNot(circuitValues(5, 0))}F; R2= {FormatEngNot(circuitValues(6, 0))}")
         'Show Calculated Values
         OutputListBox.Items.Add("Component Impedances:")
-        OutputListBox.Items.Add($"XC1= {FormatEngNot(polRectValues(1, 0))}")
+        OutputListBox.Items.Add($"XC1= {FormatEngNot(polRectValues(0, 0))}Ω ∠{CInt(polRectValues(0, 1))}°, ({FormatEngNot(polRectValues(0, 2))}, j{FormatEngNot(polRectValues(0, 3))})")
+        OutputListBox.Items.Add($"XL1= {FormatEngNot(polRectValues(1, 0))}Ω ∠{CInt(polRectValues(1, 1))}°, ({FormatEngNot(polRectValues(1, 2))}, j{FormatEngNot(polRectValues(1, 3))})")
+        OutputListBox.Items.Add($"XC2= {FormatEngNot(polRectValues(2, 0))}Ω ∠{CInt(polRectValues(2, 1))}°, ({FormatEngNot(polRectValues(2, 2))}, j{FormatEngNot(polRectValues(2, 3))})")
+
     End Sub
 
     'Event Handlers
