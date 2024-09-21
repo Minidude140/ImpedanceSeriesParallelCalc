@@ -37,7 +37,7 @@ Public Class CircuitForm
     '   2:  |  ZC1R1   | ZC1R1θ  |  ZC1R1R  |  ZC1R1J
     '   3:  |  ZTOT    | ZTOTθ   |  ZTOTR   |  ZTOTj
 
-    Dim voltagesAndCurrents(5, 1) As Double
+    Dim voltagesAndCurrents(5, 3) As Double
     '          0:         1:         2:     3:
     '   0:  | Itot   |   Itotθ    |   x  |   x
     '   1:  | VR1    |   VR1θ     |  VC1 |  VC1θ
@@ -169,6 +169,7 @@ Public Class CircuitForm
         CalculateSeriesComponents()
         CalculateParallelBranches()
         CalculateImpedanceTotal()
+        CalculateVoltagesAndCurrents()
         LoadListboxWithResults()
     End Sub
 
@@ -388,6 +389,10 @@ Public Class CircuitForm
         OutputListBox.Items.Add($"ZBR1//ZBR2= {FormatEngNot(impedanceValues(1, 0))}Ω ∠{CInt(impedanceValues(1, 1))}°; ({FormatEngNot(impedanceValues(1, 2))}, j{FormatEngNot(impedanceValues(1, 3))})")
         OutputListBox.Items.Add($"XC1+R1= {FormatEngNot(impedanceValues(2, 0))}Ω ∠{CInt(impedanceValues(2, 1))}°; ({FormatEngNot(impedanceValues(2, 2))}, j{FormatEngNot(impedanceValues(2, 3))})")
         OutputListBox.Items.Add($"ZTotal= {FormatEngNot(impedanceValues(3, 0))}Ω ∠{CInt(impedanceValues(3, 1))}°; ({FormatEngNot(impedanceValues(3, 2))}, j{FormatEngNot(impedanceValues(3, 3))})")
+        'Show calculated currents and voltages
+        OutputListBox.Items.Add("")
+        OutputListBox.Items.Add("Calculated Currents and Voltages:")
+        OutputListBox.Items.Add($"Current Total: {FormatEngNot(voltagesAndCurrents(0, 0))}A ∠{CInt(voltagesAndCurrents(0, 1))}°")
 
     End Sub
 
