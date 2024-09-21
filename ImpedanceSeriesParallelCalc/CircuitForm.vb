@@ -325,6 +325,8 @@ Public Class CircuitForm
             exponent -= 1
             mantissa *= 10
         Loop
+        'round mantissa to 3 decimal places
+        mantissa = System.Math.Round(mantissa, 3, MidpointRounding.AwayFromZero)
         'Set metric suffix dependent on exponent level
         Select Case exponent
             Case = 24 'Yotta
