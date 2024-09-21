@@ -14,7 +14,7 @@
 '[*]Add Menu Strip Buttons
 '[*]Add Tool Tip Messages
 '[*]Add Tab Stop 
-'[]Customize List Box
+'[*]Customize List Box
 '[]Need to Test Calculations
 '[]Possibly change default values
 

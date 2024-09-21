@@ -31,7 +31,6 @@ Partial Class CircuitForm
         Me.VgenTextBox = New System.Windows.Forms.TextBox()
         Me.FrequencyTextBox = New System.Windows.Forms.TextBox()
         Me.RwTextBox = New System.Windows.Forms.TextBox()
-        Me.CircuitPictureBox = New System.Windows.Forms.PictureBox()
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.CalculateButton = New System.Windows.Forms.Button()
         Me.RestoreDefaultsButton = New System.Windows.Forms.Button()
@@ -55,8 +54,9 @@ Partial Class CircuitForm
         Me.ExportResultsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuitMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CircuitPictureBox = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'C1TextBox
@@ -131,23 +131,11 @@ Partial Class CircuitForm
         Me.RwTextBox.TabIndex = 6
         Me.ToolTip1.SetToolTip(Me.RwTextBox, "Enter Winding Resistance Here")
         '
-        'CircuitPictureBox
-        '
-        Me.CircuitPictureBox.BackgroundImage = Global.ImpedanceSeriesParallelCalc.My.Resources.Resources.CircuitImage1
-        Me.CircuitPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.CircuitPictureBox.Location = New System.Drawing.Point(9, 23)
-        Me.CircuitPictureBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.CircuitPictureBox.Name = "CircuitPictureBox"
-        Me.CircuitPictureBox.Size = New System.Drawing.Size(903, 375)
-        Me.CircuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.CircuitPictureBox.TabIndex = 0
-        Me.CircuitPictureBox.TabStop = False
-        '
         'QuitButton
         '
         Me.QuitButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.QuitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QuitButton.Location = New System.Drawing.Point(815, 466)
+        Me.QuitButton.Location = New System.Drawing.Point(839, 466)
         Me.QuitButton.Margin = New System.Windows.Forms.Padding(2)
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(108, 53)
@@ -164,7 +152,7 @@ Partial Class CircuitForm
         Me.CalculateButton.Location = New System.Drawing.Point(285, 402)
         Me.CalculateButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CalculateButton.Name = "CalculateButton"
-        Me.CalculateButton.Size = New System.Drawing.Size(343, 53)
+        Me.CalculateButton.Size = New System.Drawing.Size(391, 53)
         Me.CalculateButton.TabIndex = 9
         Me.CalculateButton.Text = "Calculate " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Values"
         Me.ToolTip1.SetToolTip(Me.CalculateButton, "Calculate Current Values and Update Results")
@@ -178,7 +166,7 @@ Partial Class CircuitForm
         Me.RestoreDefaultsButton.Location = New System.Drawing.Point(404, 459)
         Me.RestoreDefaultsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RestoreDefaultsButton.Name = "RestoreDefaultsButton"
-        Me.RestoreDefaultsButton.Size = New System.Drawing.Size(108, 53)
+        Me.RestoreDefaultsButton.Size = New System.Drawing.Size(156, 53)
         Me.RestoreDefaultsButton.TabIndex = 10
         Me.RestoreDefaultsButton.Text = "Restore" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Defaults"
         Me.ToolTip1.SetToolTip(Me.RestoreDefaultsButton, "Restore Values To Default and Update Results")
@@ -286,18 +274,22 @@ Partial Class CircuitForm
         '
         'OutputListBox
         '
-        Me.OutputListBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.OutputListBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.OutputListBox.BackColor = System.Drawing.SystemColors.Info
+        Me.OutputListBox.Font = New System.Drawing.Font("Museo Slab 500", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OutputListBox.FormattingEnabled = True
-        Me.OutputListBox.Location = New System.Drawing.Point(928, 23)
+        Me.OutputListBox.ItemHeight = 14
+        Me.OutputListBox.Location = New System.Drawing.Point(952, 23)
         Me.OutputListBox.Name = "OutputListBox"
-        Me.OutputListBox.Size = New System.Drawing.Size(298, 498)
+        Me.OutputListBox.Size = New System.Drawing.Size(322, 494)
         Me.OutputListBox.TabIndex = 22
         '
         'ExportResultsButton
         '
         Me.ExportResultsButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ExportResultsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExportResultsButton.Location = New System.Drawing.Point(815, 409)
+        Me.ExportResultsButton.Location = New System.Drawing.Point(839, 409)
         Me.ExportResultsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ExportResultsButton.Name = "ExportResultsButton"
         Me.ExportResultsButton.Size = New System.Drawing.Size(108, 53)
@@ -311,7 +303,7 @@ Partial Class CircuitForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsMenuItem, Me.AboutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1238, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1286, 24)
         Me.MenuStrip1.TabIndex = 23
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -325,25 +317,25 @@ Partial Class CircuitForm
         'CalculateValuesMenuItem
         '
         Me.CalculateValuesMenuItem.Name = "CalculateValuesMenuItem"
-        Me.CalculateValuesMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CalculateValuesMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.CalculateValuesMenuItem.Text = "Calculate Values"
         '
         'RestoreDefaultsMenuItem
         '
         Me.RestoreDefaultsMenuItem.Name = "RestoreDefaultsMenuItem"
-        Me.RestoreDefaultsMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RestoreDefaultsMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.RestoreDefaultsMenuItem.Text = "Restore Defaults"
         '
         'ExportResultsMenuItem
         '
         Me.ExportResultsMenuItem.Name = "ExportResultsMenuItem"
-        Me.ExportResultsMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExportResultsMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.ExportResultsMenuItem.Text = "Export Results"
         '
         'QuitMenuItem
         '
         Me.QuitMenuItem.Name = "QuitMenuItem"
-        Me.QuitMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuitMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.QuitMenuItem.Text = "Quit"
         '
         'AboutToolStripMenuItem
@@ -352,11 +344,23 @@ Partial Class CircuitForm
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
         Me.AboutToolStripMenuItem.Text = "About"
         '
+        'CircuitPictureBox
+        '
+        Me.CircuitPictureBox.BackgroundImage = Global.ImpedanceSeriesParallelCalc.My.Resources.Resources.CircuitImage1
+        Me.CircuitPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.CircuitPictureBox.Location = New System.Drawing.Point(9, 23)
+        Me.CircuitPictureBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.CircuitPictureBox.Name = "CircuitPictureBox"
+        Me.CircuitPictureBox.Size = New System.Drawing.Size(903, 375)
+        Me.CircuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.CircuitPictureBox.TabIndex = 0
+        Me.CircuitPictureBox.TabStop = False
+        '
         'CircuitForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1238, 530)
+        Me.ClientSize = New System.Drawing.Size(1286, 530)
         Me.Controls.Add(Me.ExportResultsButton)
         Me.Controls.Add(Me.OutputListBox)
         Me.Controls.Add(Me.Branch2Label)
@@ -384,13 +388,13 @@ Partial Class CircuitForm
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(1254, 569)
+        Me.MinimumSize = New System.Drawing.Size(1302, 569)
         Me.Name = "CircuitForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Circuit Calculator"
-        CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
