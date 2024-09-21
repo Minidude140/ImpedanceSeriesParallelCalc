@@ -62,7 +62,7 @@ Partial Class CircuitForm
         'C1TextBox
         '
         Me.C1TextBox.Location = New System.Drawing.Point(248, 99)
-        Me.C1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.C1TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.C1TextBox.Name = "C1TextBox"
         Me.C1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.C1TextBox.TabIndex = 3
@@ -71,7 +71,7 @@ Partial Class CircuitForm
         'R1TextBox
         '
         Me.R1TextBox.Location = New System.Drawing.Point(360, 99)
-        Me.R1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R1TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.R1TextBox.Name = "R1TextBox"
         Me.R1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.R1TextBox.TabIndex = 4
@@ -80,7 +80,7 @@ Partial Class CircuitForm
         'L1TextBox
         '
         Me.L1TextBox.Location = New System.Drawing.Point(578, 176)
-        Me.L1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.L1TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.L1TextBox.Name = "L1TextBox"
         Me.L1TextBox.Size = New System.Drawing.Size(50, 20)
         Me.L1TextBox.TabIndex = 5
@@ -89,7 +89,7 @@ Partial Class CircuitForm
         'C2TextBox
         '
         Me.C2TextBox.Location = New System.Drawing.Point(784, 141)
-        Me.C2TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.C2TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.C2TextBox.Name = "C2TextBox"
         Me.C2TextBox.Size = New System.Drawing.Size(50, 20)
         Me.C2TextBox.TabIndex = 7
@@ -98,7 +98,7 @@ Partial Class CircuitForm
         'R2TextBox
         '
         Me.R2TextBox.Location = New System.Drawing.Point(784, 247)
-        Me.R2TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.R2TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.R2TextBox.Name = "R2TextBox"
         Me.R2TextBox.Size = New System.Drawing.Size(50, 20)
         Me.R2TextBox.TabIndex = 8
@@ -107,7 +107,7 @@ Partial Class CircuitForm
         'VgenTextBox
         '
         Me.VgenTextBox.Location = New System.Drawing.Point(34, 153)
-        Me.VgenTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.VgenTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.VgenTextBox.Name = "VgenTextBox"
         Me.VgenTextBox.Size = New System.Drawing.Size(50, 20)
         Me.VgenTextBox.TabIndex = 1
@@ -116,7 +116,7 @@ Partial Class CircuitForm
         'FrequencyTextBox
         '
         Me.FrequencyTextBox.Location = New System.Drawing.Point(34, 219)
-        Me.FrequencyTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.FrequencyTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.FrequencyTextBox.Name = "FrequencyTextBox"
         Me.FrequencyTextBox.Size = New System.Drawing.Size(50, 20)
         Me.FrequencyTextBox.TabIndex = 2
@@ -125,7 +125,7 @@ Partial Class CircuitForm
         'RwTextBox
         '
         Me.RwTextBox.Location = New System.Drawing.Point(578, 221)
-        Me.RwTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RwTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.RwTextBox.Name = "RwTextBox"
         Me.RwTextBox.Size = New System.Drawing.Size(50, 20)
         Me.RwTextBox.TabIndex = 6
@@ -136,7 +136,7 @@ Partial Class CircuitForm
         Me.CircuitPictureBox.BackgroundImage = Global.ImpedanceSeriesParallelCalc.My.Resources.Resources.CircuitImage1
         Me.CircuitPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.CircuitPictureBox.Location = New System.Drawing.Point(9, 23)
-        Me.CircuitPictureBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CircuitPictureBox.Margin = New System.Windows.Forms.Padding(2)
         Me.CircuitPictureBox.Name = "CircuitPictureBox"
         Me.CircuitPictureBox.Size = New System.Drawing.Size(903, 375)
         Me.CircuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -148,7 +148,7 @@ Partial Class CircuitForm
         Me.QuitButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.QuitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuitButton.Location = New System.Drawing.Point(815, 466)
-        Me.QuitButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.QuitButton.Margin = New System.Windows.Forms.Padding(2)
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(108, 53)
         Me.QuitButton.TabIndex = 12
@@ -162,7 +162,7 @@ Partial Class CircuitForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CalculateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CalculateButton.Location = New System.Drawing.Point(285, 402)
-        Me.CalculateButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CalculateButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CalculateButton.Name = "CalculateButton"
         Me.CalculateButton.Size = New System.Drawing.Size(343, 53)
         Me.CalculateButton.TabIndex = 9
@@ -176,7 +176,7 @@ Partial Class CircuitForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RestoreDefaultsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RestoreDefaultsButton.Location = New System.Drawing.Point(404, 459)
-        Me.RestoreDefaultsButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RestoreDefaultsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RestoreDefaultsButton.Name = "RestoreDefaultsButton"
         Me.RestoreDefaultsButton.Size = New System.Drawing.Size(108, 53)
         Me.RestoreDefaultsButton.TabIndex = 10
@@ -383,9 +383,10 @@ Partial Class CircuitForm
         Me.Controls.Add(Me.CircuitPictureBox)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(1254, 569)
         Me.Name = "CircuitForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Circuit Calculator"
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)

@@ -452,13 +452,15 @@ Public Class CircuitForm
             If UserInputValidation() = True Then
                 'Load numbers into array
                 LoadCircuitValues()
+                'Run calculations
                 CalculateBranch1()
                 CalculateSeriesComponents()
                 CalculateParallelBranches()
                 CalculateImpedanceTotal()
                 CalculateVoltagesAndCurrents()
+                'Output Results to List Box
                 LoadListboxWithResults()
-                MsgBox("User input values have been saved")
+                MsgBox("User input values have been loaded")
             Else
                 'Not all numbers throw exception
                 Throw New Exception()
@@ -485,5 +487,10 @@ Public Class CircuitForm
             MsgBox("Sorry, Results were not able to be saved.")
         End Try
 
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        'Displays the about this program form
+        AboutForm.Show()
     End Sub
 End Class
