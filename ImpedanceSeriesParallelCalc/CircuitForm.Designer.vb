@@ -45,6 +45,7 @@ Partial Class CircuitForm
         Me.Branch1Label = New System.Windows.Forms.Label()
         Me.Branch2Label = New System.Windows.Forms.Label()
         Me.OutputListBox = New System.Windows.Forms.ListBox()
+        Me.ExportResultsButton = New System.Windows.Forms.Button()
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -271,11 +272,24 @@ Partial Class CircuitForm
         Me.OutputListBox.Size = New System.Drawing.Size(298, 498)
         Me.OutputListBox.TabIndex = 22
         '
+        'ExportResultsButton
+        '
+        Me.ExportResultsButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ExportResultsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ExportResultsButton.Location = New System.Drawing.Point(815, 409)
+        Me.ExportResultsButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ExportResultsButton.Name = "ExportResultsButton"
+        Me.ExportResultsButton.Size = New System.Drawing.Size(108, 53)
+        Me.ExportResultsButton.TabIndex = 23
+        Me.ExportResultsButton.Text = "Export" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Results"
+        Me.ExportResultsButton.UseVisualStyleBackColor = True
+        '
         'CircuitForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1238, 530)
+        Me.Controls.Add(Me.ExportResultsButton)
         Me.Controls.Add(Me.OutputListBox)
         Me.Controls.Add(Me.Branch2Label)
         Me.Controls.Add(Me.Branch1Label)
@@ -332,4 +346,5 @@ Partial Class CircuitForm
     Friend WithEvents Branch1Label As Label
     Friend WithEvents Branch2Label As Label
     Friend WithEvents OutputListBox As ListBox
+    Friend WithEvents ExportResultsButton As Button
 End Class

@@ -8,9 +8,15 @@
 '[*]User input validation
 '[*]Load Default Circuit Values
 '[*]Calculate Impedance Totals
-'[1/2]Calculate Voltages and Currents
+'[*]Calculate Voltages and Currents
 '[*]Create and populate list box with results
-'[]Output File with results;  Use print function
+'[*]Output File with results;  Use print function
+'[]Add Tool Strip Buttons
+'[]Add Tool Tip Messages
+'[]Add Tab Stop 
+'[]Customize List Box
+'[]Need to Test Calculations
+'[]Possibly change default values
 
 Option Explicit On
 Option Strict On
@@ -383,9 +389,9 @@ Public Class CircuitForm
         'Show Calculated Values
         OutputListBox.Items.Add("")
         OutputListBox.Items.Add("Component Impedances:")
-        OutputListBox.Items.Add($"XC1= {FormatEngNot(polRectValues(0,0))}Ω ∠{CInt(polRectValues(0,1))}°; ({FormatEngNot(polRectValues(0,2))}, j{FormatEngNot(polRectValues(0,3))})")
-        OutputListBox.Items.Add($"XL1= {FormatEngNot(polRectValues(1,0))}Ω ∠{CInt(polRectValues(1,1))}°; ({FormatEngNot(polRectValues(1,2))}, j{FormatEngNot(polRectValues(1,3))})")
-        OutputListBox.Items.Add($"XC2= {FormatEngNot(polRectValues(2,0))}Ω ∠{CInt(polRectValues(2,1))}°; ({FormatEngNot(polRectValues(2,2))}, j{FormatEngNot(polRectValues(2,3))})")
+        OutputListBox.Items.Add($"XC1= {FormatEngNot(polRectValues(0, 0))}Ω ∠{CInt(polRectValues(0, 1))}°; ({FormatEngNot(polRectValues(0, 2))}, j{FormatEngNot(polRectValues(0, 3))})")
+        OutputListBox.Items.Add($"XL1= {FormatEngNot(polRectValues(1, 0))}Ω ∠{CInt(polRectValues(1, 1))}°; ({FormatEngNot(polRectValues(1, 2))}, j{FormatEngNot(polRectValues(1, 3))})")
+        OutputListBox.Items.Add($"XC2= {FormatEngNot(polRectValues(2, 0))}Ω ∠{CInt(polRectValues(2, 1))}°; ({FormatEngNot(polRectValues(2, 2))}, j{FormatEngNot(polRectValues(2, 3))})")
         'Show Branch impedance Values
         OutputListBox.Items.Add("")
         OutputListBox.Items.Add("Calculated Branch Impedances:")
@@ -406,6 +412,30 @@ Public Class CircuitForm
         OutputListBox.Items.Add($"VL1= {FormatEngNot(voltagesAndCurrents(4, 0))}V ∠{CInt(voltagesAndCurrents(4, 1))}°")
         OutputListBox.Items.Add($"VR2= {FormatEngNot(voltagesAndCurrents(5, 2))}V ∠{CInt(voltagesAndCurrents(5, 3))}°")
         OutputListBox.Items.Add($"VC2= {FormatEngNot(voltagesAndCurrents(5, 0))}V ∠{CInt(voltagesAndCurrents(5, 1))}°")
+    End Sub
+
+    ''' <summary>
+    ''' Exports contents of list box to a txt file in the source folder
+    ''' </summary>
+    Sub ExportToFile()
+        'Name file and open
+        Dim fileName As String = "..\..\..\CalculatedResults" & DateTime.Now.ToString("yyyMMdd") & ".txt"
+        Dim fileNumber As Integer = FreeFile()
+        FileOpen(fileNumber, fileName, OpenMode.Append)
+        'Write Results to file
+        For Each item As Object In OutputListBox.Items
+            Print(fileNumber, item)
+            WriteLine(fileNumber)
+        Next
+        WriteLine(fileNumber)
+        WriteLine(fileNumber, StrDup(50, "*"))
+        FileClose(fileNumber)
+        'remove the . in the fileName (except the .txt)
+        fileName = Replace(fileName, ".", "", 1, 6)
+        'Remove the \ in the file name
+        fileName = Replace(fileName, "\", "", 1, -1)
+        'Prompt user that the game has been saved
+        MsgBox("Your results have been saved to: " + fileName)
     End Sub
 
     'Event Handlers
@@ -444,4 +474,12 @@ Public Class CircuitForm
         LoadDefaults()
     End Sub
 
+    Private Sub ExportResultsButton_Click(sender As Object, e As EventArgs) Handles ExportResultsButton.Click
+        'Try
+        ExportToFile()
+        ' Catch ex As Exception
+        ' MsgBox("Sorry, Results were not able to be saved.")
+        ' End Try
+
+    End Sub
 End Class
