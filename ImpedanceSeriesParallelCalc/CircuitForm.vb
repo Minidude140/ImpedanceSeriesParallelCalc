@@ -11,7 +11,7 @@
 '[*]Calculate Voltages and Currents
 '[*]Create and populate list box with results
 '[*]Output File with results;  Use print function
-'[]Add Tool Strip Buttons
+'[*]Add Menu Strip Buttons
 '[*]Add Tool Tip Messages
 '[*]Add Tab Stop 
 '[]Customize List Box
@@ -439,12 +439,14 @@ Public Class CircuitForm
     End Sub
 
     'Event Handlers
-    Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click
+    Private Sub QuitButton_Click(sender As Object, e As EventArgs) Handles QuitButton.Click,
+                                                                           QuitMenuItem.Click
         'Close Program
         Me.Close()
     End Sub
 
-    Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click
+    Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click,
+                                                                                CalculateValuesMenuItem.Click
         Try
             'Checks if all inputs are numbers
             If UserInputValidation() = True Then
@@ -470,16 +472,18 @@ Public Class CircuitForm
         LoadDefaults()
     End Sub
 
-    Private Sub RestoreDefaultsButton_Click(sender As Object, e As EventArgs) Handles RestoreDefaultsButton.Click
+    Private Sub RestoreDefaultsButton_Click(sender As Object, e As EventArgs) Handles RestoreDefaultsButton.Click,
+                                                                                      RestoreDefaultsMenuItem.Click
         LoadDefaults()
     End Sub
 
-    Private Sub ExportResultsButton_Click(sender As Object, e As EventArgs) Handles ExportResultsButton.Click
-        'Try
-        ExportToFile()
-        ' Catch ex As Exception
-        ' MsgBox("Sorry, Results were not able to be saved.")
-        ' End Try
+    Private Sub ExportResultsButton_Click(sender As Object, e As EventArgs) Handles ExportResultsButton.Click,
+                                                                                    ExportResultsMenuItem.Click
+        Try
+            ExportToFile()
+        Catch ex As Exception
+            MsgBox("Sorry, Results were not able to be saved.")
+        End Try
 
     End Sub
 End Class

@@ -48,7 +48,15 @@ Partial Class CircuitForm
         Me.OutputListBox = New System.Windows.Forms.ListBox()
         Me.ExportResultsButton = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.OptionsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CalculateValuesMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RestoreDefaultsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportResultsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuitMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'C1TextBox
@@ -298,6 +306,52 @@ Partial Class CircuitForm
         Me.ToolTip1.SetToolTip(Me.ExportResultsButton, "Export Results to Text File")
         Me.ExportResultsButton.UseVisualStyleBackColor = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsMenuItem, Me.AboutToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1238, 24)
+        Me.MenuStrip1.TabIndex = 23
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'OptionsMenuItem
+        '
+        Me.OptionsMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalculateValuesMenuItem, Me.RestoreDefaultsMenuItem, Me.ExportResultsMenuItem, Me.QuitMenuItem})
+        Me.OptionsMenuItem.Name = "OptionsMenuItem"
+        Me.OptionsMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.OptionsMenuItem.Text = "Options"
+        '
+        'CalculateValuesMenuItem
+        '
+        Me.CalculateValuesMenuItem.Name = "CalculateValuesMenuItem"
+        Me.CalculateValuesMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CalculateValuesMenuItem.Text = "Calculate Values"
+        '
+        'RestoreDefaultsMenuItem
+        '
+        Me.RestoreDefaultsMenuItem.Name = "RestoreDefaultsMenuItem"
+        Me.RestoreDefaultsMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RestoreDefaultsMenuItem.Text = "Restore Defaults"
+        '
+        'ExportResultsMenuItem
+        '
+        Me.ExportResultsMenuItem.Name = "ExportResultsMenuItem"
+        Me.ExportResultsMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExportResultsMenuItem.Text = "Export Results"
+        '
+        'QuitMenuItem
+        '
+        Me.QuitMenuItem.Name = "QuitMenuItem"
+        Me.QuitMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuitMenuItem.Text = "Quit"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
         'CircuitForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -327,11 +381,15 @@ Partial Class CircuitForm
         Me.Controls.Add(Me.R1TextBox)
         Me.Controls.Add(Me.C1TextBox)
         Me.Controls.Add(Me.CircuitPictureBox)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MinimumSize = New System.Drawing.Size(1254, 569)
         Me.Name = "CircuitForm"
         Me.Text = "Circuit Calculator"
         CType(Me.CircuitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -362,4 +420,11 @@ Partial Class CircuitForm
     Friend WithEvents OutputListBox As ListBox
     Friend WithEvents ExportResultsButton As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents OptionsMenuItem As ToolStripMenuItem
+    Friend WithEvents CalculateValuesMenuItem As ToolStripMenuItem
+    Friend WithEvents RestoreDefaultsMenuItem As ToolStripMenuItem
+    Friend WithEvents ExportResultsMenuItem As ToolStripMenuItem
+    Friend WithEvents QuitMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,0 +1,28 @@
+Input Circuit Values:
+Voltage: 12V; Frequency: 1KHz
+R1= 50O; C= 1µF; L1= 1H; RW= 50O; C2= 1µF; R2= 500
+
+Component Impedances:
+XC1= 159.155O ?-90°; (0, j-159.155)
+XL1= 6.283KO ?90°; (50, j6.283K)
+XC2= 159.155O ?-90°; (0, j-159.155)
+
+Calculated Branch Impedances:
+ZBR1= 524.719O ?-18°; (500, j-159.155)
+ZBR2= 6.283KO ?90°; (50, j6.283K)
+ZBR1//ZBR2= 536.215O ?-13°; (522.512, j-120.446)
+XC1+R1= 166.824O ?-73°; (50, j-159.155)
+ZTotal= 637.14O ?-26°; (572.512, j-279.602)
+
+Calculated Currents and Voltages:
+Current Total= 18.834mA ?26°
+IBR1= 19.247mA ?31°
+IBR2= 1.607mA ?-76°
+VBR1&2= 10.099V ?13°
+VR1= 941.709mV ?26°
+VC1= 2.998V ?-64°
+VL1= 10.099V ?13°
+VR2= 9.623V ?31°
+VC2= 3.063V ?-59°
+
+"**************************************************"
