@@ -9,7 +9,7 @@
 '[*]Load Default Circuit Values
 '[*]Calculate Impedance Totals
 '[1/2]Calculate Voltages and Currents
-'[]Create and populate list box with results
+'[*]Create and populate list box with results
 '[]Output File with results;  Use print function
 
 Option Explicit On
@@ -370,6 +370,9 @@ Public Class CircuitForm
         Return $"{mantissa}{metricSuffix}"
     End Function
 
+    ''' <summary>
+    ''' Cleans up Results and populates list box with output message
+    ''' </summary>
     Sub LoadListboxWithResults()
         'Clear any previous list box values
         OutputListBox.Items.Clear()
@@ -417,6 +420,12 @@ Public Class CircuitForm
             If UserInputValidation() = True Then
                 'Load numbers into array
                 LoadCircuitValues()
+                CalculateBranch1()
+                CalculateSeriesComponents()
+                CalculateParallelBranches()
+                CalculateImpedanceTotal()
+                CalculateVoltagesAndCurrents()
+                LoadListboxWithResults()
                 MsgBox("User input values have been saved")
             Else
                 'Not all numbers throw exception
