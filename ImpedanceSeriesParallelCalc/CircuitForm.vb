@@ -291,7 +291,7 @@ Public Class CircuitForm
         'Calculate Current of Branch 2 (VBR1/2 / ZBR2)
         voltagesAndCurrents(3, 2) = (voltagesAndCurrents(2, 0) / polRectValues(1, 0))
         'Calculate the Current Phase angle of branch 2 (VBR1/2θ - ZBR2θ)
-        voltagesAndCurrents(3, 3) = (voltagesAndCurrents(2, 1) / polRectValues(1, 1))
+        voltagesAndCurrents(3, 3) = (voltagesAndCurrents(2, 1) - polRectValues(1, 1))
         'Calculate VL1 (IBR2 * XL1)
         voltagesAndCurrents(4, 0) = (voltagesAndCurrents(3, 2) * polRectValues(1, 0))
         'Calculate VL1 Phase angle (IBR2θ + XL1θ)
@@ -392,8 +392,15 @@ Public Class CircuitForm
         'Show calculated currents and voltages
         OutputListBox.Items.Add("")
         OutputListBox.Items.Add("Calculated Currents and Voltages:")
-        OutputListBox.Items.Add($"Current Total: {FormatEngNot(voltagesAndCurrents(0, 0))}A ∠{CInt(voltagesAndCurrents(0, 1))}°")
-
+        OutputListBox.Items.Add($"Current Total= {FormatEngNot(voltagesAndCurrents(0, 0))}A ∠{CInt(voltagesAndCurrents(0, 1))}°")
+        OutputListBox.Items.Add($"IBR1= {FormatEngNot(voltagesAndCurrents(3, 0))}A ∠{CInt(voltagesAndCurrents(3, 1))}°")
+        OutputListBox.Items.Add($"IBR2= {FormatEngNot(voltagesAndCurrents(3, 2))}A ∠{CInt(voltagesAndCurrents(3, 3))}°")
+        OutputListBox.Items.Add($"VBR1&2= {FormatEngNot(voltagesAndCurrents(2, 0))}V ∠{CInt(voltagesAndCurrents(2, 1))}°")
+        OutputListBox.Items.Add($"VR1= {FormatEngNot(voltagesAndCurrents(1, 0))}V ∠{CInt(voltagesAndCurrents(1, 1))}°")
+        OutputListBox.Items.Add($"VC1= {FormatEngNot(voltagesAndCurrents(1, 2))}V ∠{CInt(voltagesAndCurrents(1, 3))}°")
+        OutputListBox.Items.Add($"VL1= {FormatEngNot(voltagesAndCurrents(4, 0))}V ∠{CInt(voltagesAndCurrents(4, 1))}°")
+        OutputListBox.Items.Add($"VR2= {FormatEngNot(voltagesAndCurrents(5, 2))}V ∠{CInt(voltagesAndCurrents(5, 3))}°")
+        OutputListBox.Items.Add($"VC2= {FormatEngNot(voltagesAndCurrents(5, 0))}V ∠{CInt(voltagesAndCurrents(5, 1))}°")
     End Sub
 
     'Event Handlers
