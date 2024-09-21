@@ -15,8 +15,7 @@
 '[*]Add Tool Tip Messages
 '[*]Add Tab Stop 
 '[*]Customize List Box
-'[]Need to Test Calculations
-'[]Possibly change default values
+'[*]Need to Test Calculations
 
 Option Explicit On
 Option Strict On
